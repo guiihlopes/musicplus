@@ -1,5 +1,6 @@
 # Music +
-Music + é uma aplicação back-end e front-end utilizando Yii2 com intuito de ser utilizada para o TCC.
+Music + é uma aplicação back-end e front-end utilizando [yii2](http://www.yiiframework.com/)
+ com intuito de ser utilizada para o TCC.
 
 > O nome "Music +" foi dado pois essa aplicação...
 
@@ -12,7 +13,7 @@ Music + é uma aplicação back-end e front-end utilizando Yii2 com intuito de s
 Essa é uma aplicação PHP + HTML5 + CSS3 + JavaScript feita em cima da framework [yii2](http://www.yiiframework.com/).
 As principais tecnologias utilizadas são:
 
-- [yii2](http://www.yiiframework.com/)
+- [![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](http://www.yiiframework.com/)
 
 ## Rodando a aplicação
 Para rodar o projeto, instale os seguintes programas na sua maquina:
