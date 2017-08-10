@@ -19,9 +19,16 @@ Para rodar o projeto, instale os seguintes programas na sua maquina:
 
 - [XAMPP](https://www.apachefriends.org/pt_br/index.html)
 
-Clone este repositório dentro da pasta htdocs do seu XAMPP
+Clone este repositório.
 
 Suba o servico do APACHE e do MySQL, apos isso, importe o dump do banco de dados para o MySQL.
+
+Para conseguir rodar o sistema vá ao seu terminal e execute:
+
+```bash
+$ cd framework/
+$ php yii serve
+```
 
 Se tudo der certo, acesse <http://localhost/nome_do_projeto>. Se algo der errado, procure alguém da equipe :P.
 
