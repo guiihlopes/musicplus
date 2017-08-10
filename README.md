@@ -4,9 +4,9 @@ Music + é uma aplicação back-end e front-end utilizando Yii2 com intuito de s
 > O nome "Music +" foi dado pois essa aplicação...
 
 ## Créditos
-Guilherme de Oliveira Lopes
-Erik Liu
-Rodolfo
+- Guilherme de Oliveira Lopes
+- Erik Liu
+- Rodolfo
 
 ## Stack
 Essa é uma aplicação PHP + HTML5 + CSS3 + JavaScript feita em cima da framework [yii2](http://www.yiiframework.com/).
