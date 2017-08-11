@@ -19,6 +19,7 @@ As principais tecnologias utilizadas são:
 Para rodar o projeto, instale os seguintes programas na sua maquina:
 
 - [XAMPP](https://www.apachefriends.org/pt_br/index.html)
+- [Composer](https://getcomposer.org/)
 
 Clone este repositório.
 
@@ -28,6 +29,7 @@ Para conseguir rodar o sistema vá ao seu terminal e execute:
 
 ```bash
 $ cd framework/
+$ composer install
 $ php yii serve
 ```
 
