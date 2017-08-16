@@ -41,14 +41,24 @@ class Usuario extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['email', 'senha', 'perfil_id', 'genero', 'status'], 'required'],
+            [['email', 'senha', 'genero'], 'required'],
             [['data_nascimento'], 'safe'],
+            [['status'], 'default', 'value'=> 1],
+            [['perfil_id'], 'default', 'value'=> 2],
             [['perfil_id', 'genero', 'status'], 'integer'],
             [['nome', 'sobrenome', 'senha'], 'string', 'max' => 45],
             [['email'], 'string', 'max' => 155],
             [['email'], 'unique'],
             [['perfil_id'], 'exist', 'skipOnError' => true, 'targetClass' => Perfil::className(), 'targetAttribute' => ['perfil_id' => 'id']],
         ];
+    }
+    
+    public function beforeSave($insert)
+    {
+        if ($insert) {
+            $this->senha = md5($this->senha);
+        }
+        return parent::beforeSave($insert);
     }
 
     /**
