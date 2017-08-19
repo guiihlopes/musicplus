@@ -77,6 +77,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         $this->layout = 'signLayout';
+        
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         }

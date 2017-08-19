@@ -73,7 +73,7 @@ class Usuario extends \yii\db\ActiveRecord
             'email' => 'Email',
             'senha' => 'Senha',
             'data_nascimento' => 'Data Nascimento',
-            'perfil_id' => 'Perfil ID',
+            'perfil_id' => 'Perfil',
             'genero' => 'Genero',
             'status' => 'Status',
         ];
