@@ -21,6 +21,13 @@ Para rodar o projeto, instale os seguintes programas na sua maquina:
 - [XAMPP](https://www.apachefriends.org/pt_br/index.html)
 - [Composer](https://getcomposer.org/)
 
+
+** APOS INSTALAR O COMPOSER EXECUTE O SEGUINTE COMANDO
+
+```bash
+$ composer global require "fxp/composer-asset-plugin:^1.3.1"
+```
+
 Clone este repositório.
 
 Suba o servico do APACHE e do MySQL, apos isso, importe o dump do banco de dados para o MySQL.
