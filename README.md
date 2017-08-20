@@ -7,7 +7,7 @@ Music + é uma aplicação back-end e front-end utilizando [yii2](http://www.yii
 ## Créditos
 - Guilherme de Oliveira Lopes
 - Erik Liu
-- Rodolfo
+- Rodolfo Augusto
 
 ## Stack
 Essa é uma aplicação PHP + HTML5 + CSS3 + JavaScript feita em cima da framework [yii2](http://www.yiiframework.com/).
@@ -20,6 +20,13 @@ Para rodar o projeto, instale os seguintes programas na sua maquina:
 
 - [XAMPP](https://www.apachefriends.org/pt_br/index.html)
 - [Composer](https://getcomposer.org/)
+
+
+** APOS INSTALAR O COMPOSER EXECUTE O SEGUINTE COMANDO **
+
+```bash
+$ composer global require "fxp/composer-asset-plugin:^1.3.1"
+```
 
 Clone este repositório.
 
