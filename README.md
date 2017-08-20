@@ -7,7 +7,7 @@ Music + é uma aplicação back-end e front-end utilizando [yii2](http://www.yii
 ## Créditos
 - Guilherme de Oliveira Lopes
 - Erik Liu
-- Rodolfo
+- Rodolfo Augusto
 
 ## Stack
 Essa é uma aplicação PHP + HTML5 + CSS3 + JavaScript feita em cima da framework [yii2](http://www.yiiframework.com/).
