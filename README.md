@@ -22,7 +22,7 @@ Para rodar o projeto, instale os seguintes programas na sua maquina:
 - [Composer](https://getcomposer.org/)
 
 
-** APOS INSTALAR O COMPOSER EXECUTE O SEGUINTE COMANDO
+** APOS INSTALAR O COMPOSER EXECUTE O SEGUINTE COMANDO **
 
 ```bash
 $ composer global require "fxp/composer-asset-plugin:^1.3.1"
