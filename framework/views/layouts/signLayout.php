@@ -37,7 +37,7 @@ AppAsset::register($this);
 <footer id="footer">
   <div class="text-center padder">
     <p>
-      <small>Music plus<br>&copy; <?= date('Y') ?></small>
+      <small>Music +<br>&copy; <?= date('Y') ?></small>
     </p>
   </div>
 </footer>
