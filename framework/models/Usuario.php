@@ -48,6 +48,7 @@ class Usuario extends \yii\db\ActiveRecord
             [['perfil_id', 'genero', 'status'], 'integer'],
             [['nome', 'sobrenome', 'senha'], 'string', 'max' => 45],
             [['email'], 'string', 'max' => 155],
+            [['email'], 'email'],
             [['email'], 'unique'],
             [['perfil_id'], 'exist', 'skipOnError' => true, 'targetClass' => Perfil::className(), 'targetAttribute' => ['perfil_id' => 'id']],
         ];

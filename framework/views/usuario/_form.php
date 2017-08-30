@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\widgets\MaskedInput;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Usuario */
@@ -20,7 +21,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'senha')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'data_nascimento')->textInput() ?>
+    <?= $form->field($model, 'data_nascimento')->textInput()->widget(MaskedInput::className(), [
+        'clientOptions' => [
+            'alias' => 'date',
+        ]
+    ]) ?>
 
     <?= $form->field($model, 'perfil_id')->textInput() ?>
 
