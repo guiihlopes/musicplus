@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use app\models\Perfil;
+use app\models\Genero;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 use yii\widgets\MaskedInput;
@@ -33,9 +34,12 @@ use yii\widgets\MaskedInput;
         'prompt' => ''
     ]) ?>
 
-    <?= $form->field($model, 'genero')->textInput() ?>
+    <?= $form->field($model, 'genero')->radioList(ArrayHelper::map(Genero::find()->all(), 'id', 'descricao')) ?>
 
-    <?= $form->field($model, 'status')->textInput() ?>
+    <?= $form->field($model, 'status')->radioList([
+        0 => 'Inativo',
+        1 => 'Ativo',
+    ]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
