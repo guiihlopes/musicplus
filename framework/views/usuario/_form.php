@@ -1,6 +1,8 @@
 <?php
 
 use yii\helpers\Html;
+use app\models\Perfil;
+use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 use yii\widgets\MaskedInput;
 
@@ -27,7 +29,9 @@ use yii\widgets\MaskedInput;
         ]
     ]) ?>
 
-    <?= $form->field($model, 'perfil_id')->textInput() ?>
+    <?= $form->field($model, 'perfil_id')->dropDownList(ArrayHelper::map(Perfil::find()->all(), 'id', 'descricao'), [
+        'prompt' => ''
+    ]) ?>
 
     <?= $form->field($model, 'genero')->textInput() ?>
 
