@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php if (Yii::$app->session->hasFlash('userNotExist')) : ?>
 
         <div class="alert alert-danger text-center m-t">
-            This account not exist
+            This account does not exist
         </div>
 
         <?php endif; ?>
