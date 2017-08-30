@@ -13,15 +13,15 @@ use Yii;
  * @property string $bio
  * @property integer $epoca_id
  * @property integer $pais_nascimento_id
- * @property string $data_falescimento
- * @property integer $pais_falescimento_id
+ * @property string $data_falecimento
+ * @property integer $pais_falecimento_id
  * @property string $imagem_principal
  *
  * @property ComposicaoCompositor[] $composicaoCompositors
  * @property Composicao[] $composicaos
  * @property Epoca $epoca
  * @property Pais $paisNascimento
- * @property Pais $paisFalescimento
+ * @property Pais $paisFalecimento
  * @property CompositorImagem[] $compositorImagems
  * @property Imagem[] $imagems
  * @property CompositorUsuario[] $compositorUsuarios
@@ -44,14 +44,14 @@ class Compositor extends \yii\db\ActiveRecord
     {
         return [
             [['nome_completo', 'data_nascimento', 'bio', 'epoca_id', 'pais_nascimento_id', 'imagem_principal'], 'required'],
-            [['data_nascimento', 'data_falescimento'], 'safe'],
+            [['data_nascimento', 'data_falecimento'], 'safe'],
             [['bio'], 'string'],
-            [['epoca_id', 'pais_nascimento_id', 'pais_falescimento_id'], 'integer'],
+            [['epoca_id', 'pais_nascimento_id', 'pais_falecimento_id'], 'integer'],
             [['nome_completo'], 'string', 'max' => 155],
             [['imagem_principal'], 'string', 'max' => 255],
             [['epoca_id'], 'exist', 'skipOnError' => true, 'targetClass' => Epoca::className(), 'targetAttribute' => ['epoca_id' => 'id']],
             [['pais_nascimento_id'], 'exist', 'skipOnError' => true, 'targetClass' => Pais::className(), 'targetAttribute' => ['pais_nascimento_id' => 'id']],
-            [['pais_falescimento_id'], 'exist', 'skipOnError' => true, 'targetClass' => Pais::className(), 'targetAttribute' => ['pais_falescimento_id' => 'id']],
+            [['pais_falecimento_id'], 'exist', 'skipOnError' => true, 'targetClass' => Pais::className(), 'targetAttribute' => ['pais_falecimento_id' => 'id']],
         ];
     }
 
@@ -67,8 +67,8 @@ class Compositor extends \yii\db\ActiveRecord
             'bio' => 'Bio',
             'epoca_id' => 'Epoca ID',
             'pais_nascimento_id' => 'Pais Nascimento ID',
-            'data_falescimento' => 'Data Falescimento',
-            'pais_falescimento_id' => 'Pais Falescimento ID',
+            'data_falecimento' => 'Data Falecimento',
+            'pais_falecimento_id' => 'Pais Falecimento ID',
             'imagem_principal' => 'Imagem Principal',
         ];
     }
@@ -108,9 +108,9 @@ class Compositor extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getPaisFalescimento()
+    public function getPaisFalecimento()
     {
-        return $this->hasOne(Pais::className(), ['id' => 'pais_falescimento_id']);
+        return $this->hasOne(Pais::className(), ['id' => 'pais_falecimento_id']);
     }
 
     /**
