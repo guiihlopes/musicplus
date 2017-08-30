@@ -35,10 +35,17 @@ $this->params['breadcrumbs'][] = $this->title;
             'class' => 'btn btn-lg btn-warning lt b-white b-2x btn-block btn-rounded',
             'name' => 'login-button'
         ]) ?>
-        <?php if (Yii::$app->session->hasFlash('accountDisabled')): ?>
+        <?php if (Yii::$app->session->hasFlash('accountDisabled')) : ?>
 
         <div class="alert alert-danger text-center m-t">
             Your account is disabled
+        </div>
+
+        <?php endif; ?>
+        <?php if (Yii::$app->session->hasFlash('userNotExist')) : ?>
+
+        <div class="alert alert-danger text-center m-t">
+            This account not exist
         </div>
 
         <?php endif; ?>

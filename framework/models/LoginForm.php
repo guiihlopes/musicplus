@@ -60,11 +60,16 @@ class LoginForm extends Model
     public function login()
     {
         $user = $this->getUser();
-        if ($this->validate() && $user->status === 1) {
-            return Yii::$app->user->login($user, $this->rememberMe ? 3600*24*30 : 0);
-        } else if($user->status === 0){
-            Yii::$app->session->setFlash('accountDisabled');
-        };
+
+        if ($user !== null) {
+            if ($this->validate() && $user->status === 1) {
+                return Yii::$app->user->login($user, $this->rememberMe ? 3600*24*30 : 0);
+            } elseif ($user->status === 0) {
+                Yii::$app->session->setFlash('accountDisabled');
+            }
+        } else {
+            Yii::$app->session->setFlash('userNotExist');
+        }
 
         return false;
     }
