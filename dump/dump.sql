@@ -139,8 +139,8 @@ CREATE TABLE `compositor` (
   `bio` text NOT NULL,
   `epoca_id` int(11) NOT NULL,
   `pais_nascimento_id` int(11) NOT NULL,
-  `data_falescimento` date DEFAULT NULL,
-  `pais_falescimento_id` int(11) DEFAULT NULL,
+  `data_falecimento` date DEFAULT NULL,
+  `pais_falecimento_id` int(11) DEFAULT NULL,
   `imagem_principal` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -296,8 +296,8 @@ CREATE TABLE `tonalidade` (
 
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
-  `nome` varchar(45) DEFAULT NULL,
-  `sobrenome` varchar(45) DEFAULT NULL,
+  `nome` varchar(45) NOT NULL,
+  `sobrenome` varchar(45) NOT NULL,
   `email` varchar(155) NOT NULL,
   `senha` varchar(45) NOT NULL,
   `data_nascimento` date DEFAULT NULL,
@@ -390,7 +390,7 @@ ALTER TABLE `compositor`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_compositor_epoca1_idx` (`epoca_id`),
   ADD KEY `fk_compositor_pais1_idx` (`pais_nascimento_id`),
-  ADD KEY `fk_compositor_pais2_idx` (`pais_falescimento_id`);
+  ADD KEY `fk_compositor_pais2_idx` (`pais_falecimento_id`);
 
 --
 -- Indexes for table `compositor_imagem`
@@ -606,7 +606,7 @@ ALTER TABLE `composicao_usuario`
 ALTER TABLE `compositor`
   ADD CONSTRAINT `fk_compositor_epoca1` FOREIGN KEY (`epoca_id`) REFERENCES `epoca` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_compositor_pais1` FOREIGN KEY (`pais_nascimento_id`) REFERENCES `pais` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_compositor_pais2` FOREIGN KEY (`pais_falescimento_id`) REFERENCES `pais` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_compositor_pais2` FOREIGN KEY (`pais_falecimento_id`) REFERENCES `pais` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `compositor_imagem`
