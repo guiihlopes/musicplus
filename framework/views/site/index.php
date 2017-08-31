@@ -1,6 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
+use yii\helpers\Url;
 
 $this->title = 'Music +';
 ?>
@@ -41,7 +42,7 @@ $this->title = 'Music +';
                             </a>
                         </div>
                     </div>
-                    <a href="#"><img src="images/p1.jpg" alt="" class="r r-2x img-full"></a>
+                    <a href="#"><img src="<?= Url::toRoute('images/p1.jpg') ?>" alt="" class="r r-2x img-full"></a>
                 </div>
                 <div class="padder-v">
                     <a href="#" class="text-ellipsis">Tempered Song</a>
@@ -77,7 +78,7 @@ $this->title = 'Music +';
                             </a>
                         </div>
                     </div>
-                    <a href="#"><img src="images/p2.jpg" alt="" class="r r-2x img-full"></a>
+                    <a href="#"><img src="<?= Url::toRoute('images/p2.jpg') ?>" alt="" class="r r-2x img-full"></a>
                 </div>
                 <div class="padder-v">
                     <a href="#" class="text-ellipsis">Vivamus vel tincidunt libero</a>
@@ -109,7 +110,7 @@ $this->title = 'Music +';
                             </a>
                         </div>
                     </div>
-                    <a href="#"><img src="images/p3.jpg" alt="" class="r r-2x img-full"></a>
+                    <a href="#"><img src="<?= Url::toRoute('images/p3.jpg') ?>" alt="" class="r r-2x img-full"></a>
                 </div>
                 <div class="padder-v">
                     <a href="#" class="text-ellipsis">Morbi id neque quam liquam sollicitudin</a>
@@ -145,7 +146,7 @@ $this->title = 'Music +';
                             <i class="fa fa-bookmark i-lg"></i>
                         </span>
                     </div>
-                    <a href="#"><img src="images/p4.jpg" alt="" class="r r-2x img-full"></a>
+                    <a href="#"><img src="<?= Url::toRoute('images/p4.jpg') ?>" alt="" class="r r-2x img-full"></a>
                 </div>
                 <div class="padder-v">
                     <a href="#" class="text-ellipsis">Tincidunt libero</a>
@@ -177,7 +178,7 @@ $this->title = 'Music +';
                             </a>
                         </div>
                     </div>
-                    <a href="#"><img src="images/p5.jpg" alt="" class="r r-2x img-full"></a>
+                    <a href="#"><img src="<?= Url::toRoute('images/p5.jpg') ?>" alt="" class="r r-2x img-full"></a>
                 </div>
                 <div class="padder-v">
                     <a href="#" class="text-ellipsis">Fermentum diam</a>
@@ -211,7 +212,7 @@ $this->title = 'Music +';
                             </a>
                         </div>
                     </div>
-                    <a href="#"><img src="images/p6.jpg" alt="" class="r r-2x img-full"></a>
+                    <a href="#"><img src="<?= Url::toRoute('images/p6.jpg') ?>" alt="" class="r r-2x img-full"></a>
                 </div>
                 <div class="padder-v">
                     <a href="#" class="text-ellipsis">Habitant</a>
@@ -246,7 +247,7 @@ $this->title = 'Music +';
                     <div class="top">
                         <span class="pull-right m-t-sm m-r-sm badge bg-white">12</span>
                     </div>
-                    <a href="#"><img src="images/p7.jpg" alt="" class="r r-2x img-full"></a>
+                    <a href="#"><img src="<?= Url::toRoute('images/p7.jpg') ?>" alt="" class="r r-2x img-full"></a>
                 </div>
                 <div class="padder-v">
                     <a href="#" class="text-ellipsis">Vivamus vel tincidunt libero</a>
@@ -277,7 +278,7 @@ $this->title = 'Music +';
                             </a>
                         </div>
                     </div>
-                    <a href="#"><img src="images/p8.jpg" alt="" class="r r-2x img-full"></a>
+                    <a href="#"><img src="<?= Url::toRoute('images/p8.jpg') ?>" alt="" class="r r-2x img-full"></a>
                 </div>
                 <div class="padder-v">
                     <a href="#" class="text-ellipsis">Aliquam sollicitudin venenati</a>
@@ -309,7 +310,7 @@ $this->title = 'Music +';
                             </a>
                         </div>
                     </div>
-                    <a href="#"><img src="images/p9.jpg" alt="" class="r r-2x img-full"></a>
+                    <a href="#"><img src="<?= Url::toRoute('images/p9.jpg') ?>" alt="" class="r r-2x img-full"></a>
                 </div>
                 <div class="padder-v">
                     <a href="#" class="text-ellipsis">Lementum ligula vitae</a>
@@ -345,7 +346,7 @@ $this->title = 'Music +';
                             </a>
                         </div>
                     </div>
-                    <a href="#"><img src="images/p10.jpg" alt="" class="r r-2x img-full"></a>
+                    <a href="#"><img src="<?= Url::toRoute('images/p10.jpg') ?>" alt="" class="r r-2x img-full"></a>
                 </div>
                 <div class="padder-v">
                     <a href="#" class="text-ellipsis">Egestas dui nec fermentum </a>
@@ -377,7 +378,7 @@ $this->title = 'Music +';
                             </a>
                         </div>
                     </div>
-                    <a href="#"><img src="images/p11.jpg" alt="" class="r r-2x img-full"></a>
+                    <a href="#"><img src="<?= Url::toRoute('images/p11.jpg') ?>" alt="" class="r r-2x img-full"></a>
                 </div>
                 <div class="padder-v">
                     <a href="#" class="text-ellipsis">Aliquam sollicitudin venenatis ipsum</a>
@@ -408,7 +409,7 @@ $this->title = 'Music +';
                             </a>
                         </div>
                     </div>
-                    <a href="#"><img src="images/p12.jpg" alt="" class="r r-2x img-full"></a>
+                    <a href="#"><img src="<?= Url::toRoute('images/p12.jpg') ?>" alt="" class="r r-2x img-full"></a>
                 </div>
                 <div class="padder-v">
                     <a href="#" class="text-ellipsis">Vestibulum ullamcorper</a>
@@ -429,7 +430,7 @@ $this->title = 'Music +';
                                     <a href="#"><i class="fa fa-play-circle i-2x"></i></a>
                                 </div>
                             </div>
-                            <a href="#"><img src="images/a2.png" alt="" class="r r-2x img-full"></a>
+                            <a href="#"><img src="<?= Url::toRoute('images/a2.png') ?>" alt="" class="r r-2x img-full"></a>
                         </div>
                         <div class="padder-v">
                             <a href="#" class="text-ellipsis">Spring rain</a>
@@ -445,7 +446,7 @@ $this->title = 'Music +';
                                     <a href="#"><i class="fa fa-play-circle i-2x"></i></a>
                                 </div>
                             </div>
-                            <a href="#"><img src="images/a3.png" alt="" class="r r-2x img-full"></a>
+                            <a href="#"><img src="<?= Url::toRoute('images/a3.png') ?>" alt="" class="r r-2x img-full"></a>
                         </div>
                         <div class="padder-v">
                             <a href="#" class="text-ellipsis">Hope</a>
@@ -461,7 +462,7 @@ $this->title = 'Music +';
                                     <a href="#"><i class="fa fa-play-circle i-2x"></i></a>
                                 </div>
                             </div>
-                            <a href="#"><img src="images/a8.png" alt="" class="r r-2x img-full"></a>
+                            <a href="#"><img src="<?= Url::toRoute('images/a8.png') ?>" alt="" class="r r-2x img-full"></a>
                         </div>
                         <div class="padder-v">
                             <a href="#" class="text-ellipsis">Listen wind</a>
@@ -477,7 +478,7 @@ $this->title = 'Music +';
                                     <a href="#"><i class="fa fa-play-circle i-2x"></i></a>
                                 </div>
                             </div>
-                            <a href="#"><img src="images/a9.png" alt="" class="r r-2x img-full"></a>
+                            <a href="#"><img src="<?= Url::toRoute('images/a9.png') ?>" alt="" class="r r-2x img-full"></a>
                         </div>
                         <div class="padder-v">
                             <a href="#" class="text-ellipsis">Breaking me</a>
@@ -493,7 +494,7 @@ $this->title = 'Music +';
                                     <a href="#"><i class="fa fa-play-circle i-2x"></i></a>
                                 </div>
                             </div>
-                            <a href="#"><img src="images/a1.png" alt="" class="r r-2x img-full"></a>
+                            <a href="#"><img src="<?= Url::toRoute('images/a1.png') ?>" alt="" class="r r-2x img-full"></a>
                         </div>
                         <div class="padder-v">
                             <a href="#" class="text-ellipsis">Nothing</a>
@@ -509,7 +510,7 @@ $this->title = 'Music +';
                                     <a href="#"><i class="fa fa-play-circle i-2x"></i></a>
                                 </div>
                             </div>
-                            <a href="#"><img src="images/a6.png" alt="" class="r r-2x img-full"></a>
+                            <a href="#"><img src="<?= Url::toRoute('images/a6.png') ?>" alt="" class="r r-2x img-full"></a>
                         </div>
                         <div class="padder-v">
                             <a href="#" class="text-ellipsis">Panda Style</a>
@@ -525,7 +526,7 @@ $this->title = 'Music +';
                                     <a href="#"><i class="fa fa-play-circle i-2x"></i></a>
                                 </div>
                             </div>
-                            <a href="#"><img src="images/a7.png" alt="" class="r r-2x img-full"></a>
+                            <a href="#"><img src="<?= Url::toRoute('images/a7.png') ?>" alt="" class="r r-2x img-full"></a>
                         </div>
                         <div class="padder-v">
                             <a href="#" class="text-ellipsis">Hook Me</a>
@@ -541,7 +542,7 @@ $this->title = 'Music +';
                                     <a href="#"><i class="fa fa-play-circle i-2x"></i></a>
                                 </div>
                             </div>
-                            <a href="#"><img src="images/a5.png" alt="" class="r r-2x img-full"></a>
+                            <a href="#"><img src="<?= Url::toRoute('images/a5.png') ?>" alt="" class="r r-2x img-full"></a>
                         </div>
                         <div class="padder-v">
                             <a href="#" class="text-ellipsis">Tempered Song</a>
@@ -557,7 +558,7 @@ $this->title = 'Music +';
                 <a href="#" class="list-group-item clearfix">
                     <span class="pull-right h2 text-muted m-l">1</span>
                     <span class="pull-left thumb-sm avatar m-r">
-                        <img src="images/a4.png" alt="...">
+                        <img src="<?= Url::toRoute('images/a4.png') ?>" alt="...">
                     </span>
                     <span class="clear">
                         <span>Little Town</span>
@@ -567,7 +568,7 @@ $this->title = 'Music +';
                 <a href="#" class="list-group-item clearfix">
                     <span class="pull-right h2 text-muted m-l">2</span>
                     <span class="pull-left thumb-sm avatar m-r">
-                        <img src="images/a5.png" alt="...">
+                        <img src="<?= Url::toRoute('images/a5.png') ?>" alt="...">
                     </span>
                     <span class="clear">
                         <span>Lementum ligula vitae</span>
@@ -577,7 +578,7 @@ $this->title = 'Music +';
                 <a href="#" class="list-group-item clearfix">
                     <span class="pull-right h2 text-muted m-l">3</span>
                     <span class="pull-left thumb-sm avatar m-r">
-                        <img src="images/a6.png" alt="...">
+                        <img src="<?= Url::toRoute('images/a6.png') ?>" alt="...">
                     </span>
                     <span class="clear">
                         <span>Aliquam sollicitudin venenatis</span>
@@ -587,7 +588,7 @@ $this->title = 'Music +';
                 <a href="#" class="list-group-item clearfix">
                     <span class="pull-right h2 text-muted m-l">4</span>
                     <span class="pull-left thumb-sm avatar m-r">
-                        <img src="images/a7.png" alt="...">
+                        <img src="<?= Url::toRoute('images/a7.png') ?>" alt="...">
                     </span>
                     <span class="clear">
                         <span>Aliquam sollicitudin venenatis ipsum</span>
@@ -597,7 +598,7 @@ $this->title = 'Music +';
                 <a href="#" class="list-group-item clearfix">
                     <span class="pull-right h2 text-muted m-l">5</span>
                     <span class="pull-left thumb-sm avatar m-r">
-                        <img src="images/a8.png" alt="...">
+                        <img src="<?= Url::toRoute('images/a8.png') ?>" alt="...">
                     </span>
                     <span class="clear">
                         <span>Vestibulum ullamcorper</span>
