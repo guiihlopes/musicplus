@@ -62,6 +62,10 @@ class SiteController extends BaseController
      */
     public function actionIndex()
     {
+        if (Yii::$app->user->identity !== null && Yii::$app->user->identity->perfil_id === 1) {
+            return $this->redirect(['usuario/index']);
+        }
+
         return $this->render('index');
     }
 

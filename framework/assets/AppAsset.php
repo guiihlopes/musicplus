@@ -27,6 +27,14 @@ class AppAsset extends AssetBundle
         'js/jPlayer/jplayer.flat.css',
     ];
     public $js = [
+        "js/jquery.min.js",
+        "js/bootstrap.js",
+        "js/app.js",
+        "js/slimscroll/jquery.slimscroll.min.js",
+        "js/app.plugin.js",
+        "js/jPlayer/jquery.jplayer.min.js",
+        "js/jPlayer/add-on/jplayer.playlist.min.js",
+        "js/jPlayer/demo.js",
     ];
     public $depends = [
         'yii\web\YiiAsset',

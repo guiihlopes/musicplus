@@ -1177,7 +1177,7 @@ body.container {
   border-top-width: 0;
   border-bottom-color: #eee;
   border-bottom-color: rgba(0,0,0,0.1);
-  top: -8px;
+  top: -13px;
 }
 .arrow.top:after {
   content: " ";

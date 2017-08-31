@@ -28,7 +28,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'Music+',
+        'brandLabel' => 'Music +',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -65,9 +65,9 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; Music plus <?= date('Y') ?></p>
+        <p class="pull-left">&copy; Music + <?= date('Y') ?></p>
 
-        <p class="pull-right">Music Plus</p>
+        <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
 </footer>
 

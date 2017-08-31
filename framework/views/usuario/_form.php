@@ -34,7 +34,10 @@ use yii\widgets\MaskedInput;
         'prompt' => ''
     ]) ?>
 
-    <?= $form->field($model, 'genero')->radioList(ArrayHelper::map(Genero::find()->all(), 'id', 'descricao')) ?>
+    <?= $form->field($model, 'genero')->radioList([
+        0 => 'Masculino',
+        1 => 'Feminino',
+    ]) ?>
 
     <?= $form->field($model, 'status')->radioList([
         0 => 'Inativo',

@@ -11,6 +11,8 @@ class BaseController extends Controller
     {
         if (Yii::$app->user->identity !== null && Yii::$app->user->identity->perfil_id === 1) {
             $this->layout = 'adminMain';
+        } elseif (Yii::$app->user->identity !== null && Yii::$app->user->identity->perfil_id === 2) {
+            $this->layout = 'userMain';
         }
         return parent::beforeAction($action);
     }
