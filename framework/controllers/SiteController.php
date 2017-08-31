@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
+use app\models\Usuario;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
@@ -64,6 +65,25 @@ class SiteController extends BaseController
     {
         if (Yii::$app->user->identity !== null && Yii::$app->user->identity->perfil_id === 1) {
             return $this->redirect(['usuario/index']);
+        }
+
+        return $this->render('index');
+    }
+    public function actionSignup()
+    {
+        if (!Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
+        $model = new Usuario();
+        
+        $this->layout = "signLayout";
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['site/login']);
+        } else {
+            return $this->render('/usuario/signup', [
+                'model' => $model,
+            ]);
         }
 
         return $this->render('index');

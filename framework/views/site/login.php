@@ -52,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="text-center m-t m-b"><a href="#"><small>Forgot password?</small></a></div>
         <div class="line line-dashed"></div>
         <p class="text-muted text-center"><small>Do not have an account?</small></p>
-        <a href="<?= Url::toRoute('usuario/create') ?>" class="btn btn-lg btn-info btn-block rounded">Create an account</a>
+        <a href="<?= Url::toRoute('site/signup') ?>" class="btn btn-lg btn-info btn-block rounded">Create an account</a>
     <?php ActiveForm::end(); ?>
 </section>
 

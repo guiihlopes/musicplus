@@ -81,9 +81,8 @@ class UsuarioController extends BaseController
     {
         $model = new Usuario();
 
-        $this->layout = "signLayout";
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['site/login']);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
