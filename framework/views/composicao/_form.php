@@ -1,7 +1,10 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
+use yii\widgets\MaskedInput;
+use app\models\Pais;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Composicao */
@@ -16,9 +19,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'texto_informativo')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'data_composicao')->textInput() ?>
+    <?= $form->field($model, 'data_composicao')->textInput()->widget(MaskedInput::className(), [
+        'clientOptions' => [
+            'alias' => 'date',
+        ]
+    ]) ?>
 
-    <?= $form->field($model, 'pais_id')->textInput() ?>
+    <?= $form->field($model, 'pais_id')->dropDownList(ArrayHelper::map(Pais::find()->all(), 'id', 'nome'), ['prompt' => '']) ?>
 
     <?= $form->field($model, 'genero_id')->textInput() ?>
 

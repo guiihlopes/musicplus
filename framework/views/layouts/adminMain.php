@@ -39,6 +39,7 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Usuarios', 'url' => ['/usuario/index']],
             ['label' => 'Compositores', 'url' => ['/compositor/index']],
+            ['label' => 'Composição', 'url' => ['/composicao/index']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
