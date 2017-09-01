@@ -27,7 +27,6 @@ class AppAsset extends AssetBundle
         'js/jPlayer/jplayer.flat.css',
     ];
     public $js = [
-        "js/jquery.min.js",
         "js/bootstrap.js",
         "js/app.js",
         "js/slimscroll/jquery.slimscroll.min.js",

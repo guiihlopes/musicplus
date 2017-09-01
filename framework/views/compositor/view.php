@@ -34,8 +34,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'bio:ntext',
             'epoca_id',
             'pais_nascimento_id',
-            'data_falescimento',
-            'pais_falescimento_id',
+            'data_falecimento',
+            'pais_falecimento_id',
             'imagem_principal',
         ],
     ]) ?>

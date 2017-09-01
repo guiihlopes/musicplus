@@ -2,11 +2,10 @@
 
 use yii\helpers\Html;
 
-
 /* @var $this yii\web\View */
 /* @var $model app\models\Compositor */
 
-$this->title = 'Create Compositor';
+$this->title = 'Cadastrar Compositor';
 $this->params['breadcrumbs'][] = ['label' => 'Compositors', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

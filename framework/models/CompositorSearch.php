@@ -18,8 +18,8 @@ class CompositorSearch extends Compositor
     public function rules()
     {
         return [
-            [['id', 'epoca_id', 'pais_nascimento_id', 'pais_falescimento_id'], 'integer'],
-            [['nome_completo', 'data_nascimento', 'bio', 'data_falescimento', 'imagem_principal'], 'safe'],
+            [['id', 'epoca_id', 'pais_nascimento_id', 'pais_falecimento_id'], 'integer'],
+            [['nome_completo', 'data_nascimento', 'bio', 'data_falecimento', 'imagem_principal'], 'safe'],
         ];
     }
 
@@ -63,8 +63,8 @@ class CompositorSearch extends Compositor
             'data_nascimento' => $this->data_nascimento,
             'epoca_id' => $this->epoca_id,
             'pais_nascimento_id' => $this->pais_nascimento_id,
-            'data_falescimento' => $this->data_falescimento,
-            'pais_falescimento_id' => $this->pais_falescimento_id,
+            'data_falecimento' => $this->data_falecimento,
+            'pais_falecimento_id' => $this->pais_falecimento_id,
         ]);
 
         $query->andFilterWhere(['like', 'nome_completo', $this->nome_completo])

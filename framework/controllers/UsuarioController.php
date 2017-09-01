@@ -23,10 +23,10 @@ class UsuarioController extends BaseController
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['index', 'update', 'view', 'delete'],
+                'only' => ['index', 'update', 'create', 'view', 'delete'],
                 'rules' => [
                     [
-                        'actions' => ['index', 'update', 'view', 'delete'],
+                        'actions' => ['index', 'update', 'create', 'view', 'delete'],
                         'allow' => true,
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {

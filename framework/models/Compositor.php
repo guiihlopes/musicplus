@@ -65,10 +65,10 @@ class Compositor extends \yii\db\ActiveRecord
             'nome_completo' => 'Nome Completo',
             'data_nascimento' => 'Data Nascimento',
             'bio' => 'Bio',
-            'epoca_id' => 'Epoca ID',
-            'pais_nascimento_id' => 'Pais Nascimento ID',
+            'epoca_id' => 'Epoca',
+            'pais_nascimento_id' => 'Pais Nascimento',
             'data_falecimento' => 'Data Falecimento',
-            'pais_falecimento_id' => 'Pais Falecimento ID',
+            'pais_falecimento_id' => 'Pais Falecimento',
             'imagem_principal' => 'Imagem Principal',
         ];
     }

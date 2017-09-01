@@ -8,11 +8,12 @@ use app\models\CompositorSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * CompositorController implements the CRUD actions for Compositor model.
  */
-class CompositorController extends Controller
+class CompositorController extends BaseController
 {
     /**
      * @inheritdoc
@@ -20,6 +21,20 @@ class CompositorController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['index', 'update', 'create', 'view', 'delete'],
+                'rules' => [
+                    [
+                        'actions' => ['index', 'update', 'create', 'view', 'delete'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                        'matchCallback' => function ($rule, $action) {
+                            return (Yii::$app->user->identity !== null && Yii::$app->user->identity->perfil_id === 1);
+                        }
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

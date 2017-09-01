@@ -77,7 +77,7 @@ class Pais extends \yii\db\ActiveRecord
      */
     public function getCompositors0()
     {
-        return $this->hasMany(Compositor::className(), ['pais_falescimento_id' => 'id']);
+        return $this->hasMany(Compositor::className(), ['pais_falecimento_id' => 'id']);
     }
 
     /**

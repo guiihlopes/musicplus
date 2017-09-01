@@ -27,9 +27,9 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'pais_nascimento_id') ?>
 
-    <?php // echo $form->field($model, 'data_falescimento') ?>
+    <?php // echo $form->field($model, 'data_falecimento') ?>
 
-    <?php // echo $form->field($model, 'pais_falescimento_id') ?>
+    <?php // echo $form->field($model, 'pais_falecimento_id') ?>
 
     <?php // echo $form->field($model, 'imagem_principal') ?>
 
