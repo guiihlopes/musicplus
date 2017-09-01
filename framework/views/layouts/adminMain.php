@@ -40,6 +40,7 @@ AppAsset::register($this);
             ['label' => 'Usuarios', 'url' => ['/usuario/index']],
             ['label' => 'Compositores', 'url' => ['/compositor/index']],
             ['label' => 'Composição', 'url' => ['/composicao/index']],
+            ['label' => 'Época', 'url' => ['/epoca/index']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
