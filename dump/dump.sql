@@ -558,10 +558,7 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id`, `nome`, `sobrenome`, `email`, `senha`, `data_nascimento`, `perfil_id`, `genero`, `status`) VALUES
 (1, 'teste', 'teste', 'teste@teste.com', '698dc19d489c4e4db73e28a713eab07b', '2017-08-11', 1, 0, 1),
-(3, 'Teste', 'Testando', 'teste123@teste.com', '698dc19d489c4e4db73e28a713eab07b', NULL, 2, 1, 1),
-(4, 'aaa', 'bbb', 'teste1234@teste.com', '698dc19d489c4e4db73e28a713eab07b', NULL, 2, 1, 1),
-(5, 'aaa', 'bbb', 'teste12345@teste.com', '698dc19d489c4e4db73e28a713eab07b', NULL, 2, 1, 1),
-(6, 'teste', 'sobrenome', 'teste1@teste.com', '698dc19d489c4e4db73e28a713eab07b', NULL, 2, 0, 1);
+(2, 'Teste', 'Testando', 'teste123@teste.com', '698dc19d489c4e4db73e28a713eab07b', NULL, 2, 1, 1);
 
 --
 -- Indexes for dumped tables
