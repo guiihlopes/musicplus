@@ -41,7 +41,12 @@ AppAsset::register($this);
             ['label' => 'Compositores', 'url' => ['/compositor/index']],
             ['label' => 'Composições', 'url' => ['/composicao/index']],
             ['label' => 'Épocas', 'url' => ['/epoca/index']],
+            ['label' => 'Bebidas', 'url' => ['/bebida/index']],
             ['label' => 'Tonalidades', 'url' => ['/tonalidade/index']],
+            ['label' => 'Gêneros', 'url' => ['/genero/index']],
+            ['label' => 'Acontecimentos', 'url' => ['/marco-historico/index']],
+            ['label' => 'Arte', 'url' => ['/arte-afim/index']],
+            ['label' => 'Imagens', 'url' => ['/imagem/index']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (

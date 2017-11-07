@@ -7,6 +7,7 @@ use app\models\Compositor;
 use app\models\CompositorSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\web\UploadedFile;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
@@ -80,7 +81,15 @@ class CompositorController extends BaseController
     {
         $model = new Compositor();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $file = UploadedFile::getInstance($model, 'imagem_principal');
+            $fileName = $file->name;
+            $extension = $file->getExtension();
+            $model->imagem_principal = 'uploads/' . md5($fileName + time()) . "." . $extension;
+            if ($model->validate()) {
+                $model->save();
+                $file->saveAs($model->imagem_principal);
+            }
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [

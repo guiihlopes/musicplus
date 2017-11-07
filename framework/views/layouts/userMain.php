@@ -149,21 +149,36 @@ $userMenu = function ($className = null, $arrowClass = null) {
                         'options' => ['class' => 'nav bg clearfix'],
                         'encodeLabels' => false,
                         'items' => [
-                            '<li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
-                                Discover
-                            </li>',
-                            ['label' => '<i class="icon-disc icon text-success"></i>
-                            <span class="font-bold">What\'s new</span>', 'url' => ['/site/batata']],
-                            ['label' => '<i class="icon-music-tone-alt icon text-info"></i>
-                            <span class="font-bold">Genres</span>', 'url' => ['/site/batata']],
-                            ['label' => '<i class="icon-drawer icon text-primary-lter"></i>
-                            <b class="badge bg-primary pull-right">6</b>
-                            <span class="font-bold">Events</span>', 'url' => ['/site/batata']],
-                            ['label' => '<i class="icon-list icon  text-info-dker"></i>
-                            <span class="font-bold">Listen</span>', 'url' => ['/site/batata']],
-                            ['label' => '<i class="icon-social-youtube icon  text-primary"></i>
-                            <span class="font-bold">Video</span>', 'url' => ['/site/batata']],
-                            '<li class="m-b hidden-nav-xs"></li>'
+                          '<li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
+                              Discover
+                          </li>',
+                          [
+                            'label' => '<i class="icon-disc icon text-success"></i>
+                              <span class="font-bold">Compositor</span>',
+                            'url' => ['/compositor/favorito']
+                          ],
+                          [
+                            'label' => '<i class="icon-list icon  text-info-dker"></i>
+                              <span class="font-bold">Composição</span>',
+                            'url' => ['/composicao/favorita']
+                          ],
+                          [
+                            'label' => '<i class="icon-music-tone-alt icon text-info"></i>
+                              <span class="font-bold">Gêneros</span>',
+                            'url' => ['/composicao/favorita']
+                          ],
+                          [
+                            'label' => '<i class="icon-drawer icon text-primary-lter"></i>
+                              <b class="badge bg-primary pull-right">6</b>
+                              <span class="font-bold">Épocas favoritas</span>',
+                            'url' => ['/epocas/favorita']
+                          ],
+                          [
+                            'label' => '<i class="icon-social-youtube icon  text-primary"></i>
+                              <span class="font-bold">Video</span>',
+                            'url' => ['/site/batata']
+                          ],
+                          '<li class="m-b hidden-nav-xs"></li>'
                         ],
                     ]);
                 ?>

@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * ImagemController implements the CRUD actions for Imagem model.
  */
-class ImagemController extends Controller
+class ImagemController extends BaseController
 {
     /**
      * @inheritdoc

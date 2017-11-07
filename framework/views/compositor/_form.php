@@ -5,6 +5,7 @@ use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 use yii\widgets\MaskedInput;
 use app\models\Pais;
+use app\models\Epoca;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Compositor */
@@ -25,9 +26,19 @@ use app\models\Pais;
 
     <?= $form->field($model, 'bio')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'epoca_id')->textInput() ?>
+    <?= $form->field($model, 'epoca_id')->dropDownList(
+        ArrayHelper::map(
+            Epoca::find()->all(), 'id', 'descricao'
+        ), [
+            'prompt' => ''
+        ]) ?>
 
-    <?= $form->field($model, 'pais_nascimento_id')->dropDownList(ArrayHelper::map(Pais::find()->all(), 'id', 'nome'), ['prompt' => '']) ?>
+    <?= $form->field($model, 'pais_nascimento_id')->dropDownList(
+        ArrayHelper::map(
+            Pais::find()->all(), 'id', 'nome'
+        ), [
+            'prompt' => ''
+        ]) ?>
 
     <?= $form->field($model, 'data_falecimento')->textInput()->widget(MaskedInput::className(), [
         'clientOptions' => [
@@ -35,9 +46,14 @@ use app\models\Pais;
         ]
     ]) ?>
 
-    <?= $form->field($model, 'pais_falecimento_id')->dropDownList(ArrayHelper::map(Pais::find()->all(), 'id', 'nome'), ['prompt' => '']) ?>
+    <?= $form->field($model, 'pais_falecimento_id')->dropDownList(
+        ArrayHelper::map(
+            Pais::find()->all(), 'id', 'nome'
+        ), [
+            'prompt' => ''
+        ]) ?>
 
-    <?= $form->field($model, 'imagem_principal')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'imagem_principal')->fileInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Cadastrar' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -1,8 +1,10 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\CompositorSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -24,15 +26,27 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            // 'id',
             'nome_completo',
-            'data_nascimento',
+            // 'data_nascimento',
             'bio:ntext',
-            'epoca_id',
-            // 'pais_nascimento_id',
+            [
+                'label' => 'Época',
+                'value' => 'epoca.descricao'
+            ],
+            [
+                'label' => 'País de nascimento',
+                'value' => 'paisNascimento.nome'
+            ],
             // 'data_falecimento',
             // 'pais_falecimento_id',
-            // 'imagem_principal',
+            [
+                'label' => 'Imagem do compositor',
+                'format' => 'html',
+                'value' => function ($data) {
+                    return '<img src="'. Url::toRoute($data['imagem_principal']) .'" />';
+                }
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

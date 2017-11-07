@@ -63,11 +63,11 @@ class Composicao extends \yii\db\ActiveRecord
             'id' => 'ID',
             'titulo_completo' => 'Titulo Completo',
             'texto_informativo' => 'Texto Informativo',
-            'data_composicao' => 'Data Composicao',
-            'pais_id' => 'Pais ID',
-            'genero_id' => 'Genero ID',
-            'tonalidade_id' => 'Tonalidade ID',
-            'partitura_url' => 'Partitura Url',
+            'data_composicao' => 'Data Composição',
+            'pais_id' => 'Pais',
+            'genero_id' => 'Tipo de composição',
+            'tonalidade_id' => 'Tonalidade',
+            'partitura_url' => 'Partitura',
         ];
     }
 

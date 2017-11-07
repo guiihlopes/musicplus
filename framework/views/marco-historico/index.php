@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\MarcoHistoricoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -24,10 +25,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'data',
+            // 'id',
+            // 'data',
             'descricao:ntext',
-            'pais_id',
+            'pais.nome',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

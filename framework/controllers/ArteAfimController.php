@@ -8,11 +8,12 @@ use app\models\ArteAfimSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * ArteAfimController implements the CRUD actions for ArteAfim model.
  */
-class ArteAfimController extends Controller
+class ArteAfimController extends BaseController
 {
     /**
      * @inheritdoc
@@ -20,6 +21,20 @@ class ArteAfimController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['index', 'update', 'create', 'view', 'delete'],
+                'rules' => [
+                    [
+                        'actions' => ['index', 'update', 'create', 'view', 'delete'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                        'matchCallback' => function ($rule, $action) {
+                            return (Yii::$app->user->identity !== null && Yii::$app->user->identity->perfil_id === 1);
+                        }
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

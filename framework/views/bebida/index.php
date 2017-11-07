@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\BebidaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -24,16 +25,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            // 'id',
             'nome',
-            'data',
+            // 'data',
             'teor_alcoolico',
             'amadurecimento',
-            // 'descricao:ntext',
-            // 'safra',
+            'descricao:ntext',
+            'safra',
             // 'tipo',
             // 'uva',
-            // 'pais_id',
+            'pais.nome',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -58,13 +58,13 @@ class Bebida extends \yii\db\ActiveRecord
             'id' => 'ID',
             'nome' => 'Nome',
             'data' => 'Data',
-            'teor_alcoolico' => 'Teor Alcoolico',
+            'teor_alcoolico' => 'Teor Alcoólico',
             'amadurecimento' => 'Amadurecimento',
-            'descricao' => 'Descricao',
+            'descricao' => 'Descrição',
             'safra' => 'Safra',
             'tipo' => 'Tipo',
             'uva' => 'Uva',
-            'pais_id' => 'Pais ID',
+            'pais_id' => 'Pais',
         ];
     }
 

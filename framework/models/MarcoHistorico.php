@@ -48,8 +48,8 @@ class MarcoHistorico extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'data' => 'Data',
-            'descricao' => 'Descricao',
-            'pais_id' => 'Pais ID',
+            'descricao' => 'Descrição',
+            'pais_id' => 'Pais',
         ];
     }
 

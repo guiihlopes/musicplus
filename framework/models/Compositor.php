@@ -48,11 +48,26 @@ class Compositor extends \yii\db\ActiveRecord
             [['bio'], 'string'],
             [['epoca_id', 'pais_nascimento_id', 'pais_falecimento_id'], 'integer'],
             [['nome_completo'], 'string', 'max' => 155],
-            [['imagem_principal'], 'string', 'max' => 255],
+            [['imagem_principal'], 'image', 'extensions' => 'jpg, png'],
             [['epoca_id'], 'exist', 'skipOnError' => true, 'targetClass' => Epoca::className(), 'targetAttribute' => ['epoca_id' => 'id']],
             [['pais_nascimento_id'], 'exist', 'skipOnError' => true, 'targetClass' => Pais::className(), 'targetAttribute' => ['pais_nascimento_id' => 'id']],
             [['pais_falecimento_id'], 'exist', 'skipOnError' => true, 'targetClass' => Pais::className(), 'targetAttribute' => ['pais_falecimento_id' => 'id']],
         ];
+    }
+
+    public function beforeSave($insert)
+    {
+        if ($insert) {
+            // do something
+        }
+        return parent::beforeSave($insert);
+    }
+    public function afterSave($insert, $changedAttributes)
+    {
+        if ($insert) {
+            // do something
+        }
+        return parent::afterSave($insert, $changedAttributes);
     }
 
     /**
@@ -62,14 +77,14 @@ class Compositor extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'nome_completo' => 'Nome Completo',
-            'data_nascimento' => 'Data Nascimento',
+            'nome_completo' => 'Nome completo',
+            'data_nascimento' => 'Data nascimento',
             'bio' => 'Bio',
             'epoca_id' => 'Epoca',
-            'pais_nascimento_id' => 'Pais Nascimento',
-            'data_falecimento' => 'Data Falecimento',
-            'pais_falecimento_id' => 'Pais Falecimento',
-            'imagem_principal' => 'Imagem Principal',
+            'pais_nascimento_id' => 'Pais nascimento',
+            'data_falecimento' => 'Data falecimento',
+            'pais_falecimento_id' => 'Pais falecimento',
+            'imagem_principal' => 'Imagem principal',
         ];
     }
 

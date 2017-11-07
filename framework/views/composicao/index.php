@@ -3,11 +3,12 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ComposicaoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Composicaos';
+$this->title = 'Composições';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="composicao-index">
@@ -16,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Composicao', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Cadastrar composição', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 <?php Pjax::begin(); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -24,11 +25,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            // 'id',
             'titulo_completo',
             'texto_informativo:ntext',
             'data_composicao',
-            'pais_id',
+            'pais.nome',
             // 'genero_id',
             // 'tonalidade_id',
             // 'partitura_url:url',

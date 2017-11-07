@@ -8,11 +8,12 @@ use app\models\GeneroSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * GeneroController implements the CRUD actions for Genero model.
  */
-class GeneroController extends Controller
+class GeneroController extends BaseController
 {
     /**
      * @inheritdoc
@@ -20,6 +21,20 @@ class GeneroController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['index', 'update', 'create', 'view', 'delete'],
+                'rules' => [
+                    [
+                        'actions' => ['index', 'update', 'create', 'view', 'delete'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                        'matchCallback' => function ($rule, $action) {
+                            return (Yii::$app->user->identity !== null && Yii::$app->user->identity->perfil_id === 1);
+                        }
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

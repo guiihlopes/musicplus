@@ -54,7 +54,7 @@ class Imagem extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'descricao' => 'Descricao',
-            'url' => 'Url',
+            'url' => 'Imagem',
         ];
     }
 
