@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
   var myPlaylist = new jPlayerPlaylist({
     jPlayer: "#jplayer_N",
     cssSelectorAncestor: "#jp_container_N"
@@ -9,26 +8,11 @@ $(document).ready(function () {
         artist: "Miaow",
         mp3: "http://flatfull.com/themes/assets/musics/Miaow-07-Bubble.mp3",
         oga: "http://flatfull.com/themes/assets/musics/Miaow-07-Bubble.ogg",
-        poster: "images/m0.jpg"
       },
-      {
-        title: "Lentement",
-        artist: "Miaow",
-        mp3: "http://flatfull.com/themes/assets/musics/Miaow-03-Lentement.mp3",
-        oga: "http://flatfull.com/themes/assets/musics/Miaow-03-Lentement.ogg",
-        poster: "images/m0.jpg"
-      },
-      {
-        title: "Partir",
-        artist: "Miaow",
-        mp3: "http://flatfull.com/themes/assets/musics/Miaow-09-Partir.mp3",
-        oga: "http://flatfull.com/themes/assets/musics/Miaow-09-Partir.ogg",
-        poster: "images/m0.jpg"
-      }
     ], {
       playlistOptions: {
         enableRemoveControls: true,
-        autoPlay: true
+        autoPlay: false
       },
       swfPath: "js/jPlayer",
       supplied: "webmv, ogv, m4v, oga, mp3",
@@ -36,6 +20,44 @@ $(document).ready(function () {
       keyEnabled: true,
       audioFullScreen: false
     });
+
+  const itemOverlay = $('.composicao-item .item-overlay');
+  const itemPlayButton = itemOverlay.find('.center a');
+
+  const removeAllActives = () => {
+    itemPlayButton.removeClass('active');
+    itemOverlay.removeClass('active');
+  };
+
+  itemPlayButton.click(function (ev) {
+    ev.preventDefault();
+    const isActiveButton = this.classList.contains('active');
+    const parentItem = $(this).parent().parent().parent().parent();
+    const overlay = parentItem.find('.item-overlay');
+    const isActiveOverlay = overlay.hasClass('active');
+    const href = $(this).attr('href');
+    const musicInfo = parentItem.find('.padder-v');
+    const musicTitle = musicInfo.find('a:first-child').text();
+    const artistName = musicInfo.find('a:last-child').text();
+    const music = {
+      title: musicTitle,
+      artist: artistName,
+      mp3: href,
+    };
+
+    removeAllActives();
+    if (!isActiveOverlay) {
+      overlay.addClass('active');
+    }
+    if (!isActiveButton) {
+      this.classList.add('active');
+      myPlaylist.add(music);
+      const lastItem = myPlaylist.playlist.length;
+      myPlaylist.play(lastItem - 1);
+    } else {
+      myPlaylist.pause();
+    }
+  });
 
   $(document).on($.jPlayer.event.pause, myPlaylist.cssSelector.jPlayer, function () {
     $('.musicbar').removeClass('animate');
@@ -64,32 +86,6 @@ $(document).ready(function () {
       myPlaylist.play(i);
     }
 
-  });
-
-
-
-  // video
-
-  $("#jplayer_1").jPlayer({
-    ready: function () {
-      $(this).jPlayer("setMedia", {
-        title: "Big Buck Bunny",
-        m4v: "http://flatfull.com/themes/assets/video/big_buck_bunny_trailer.m4v",
-        ogv: "http://flatfull.com/themes/assets/video/big_buck_bunny_trailer.ogv",
-        webmv: "http://flatfull.com/themes/assets/video/big_buck_bunny_trailer.webm",
-        poster: "images/m41.jpg"
-      });
-    },
-    swfPath: "js",
-    supplied: "webmv, ogv, m4v",
-    size: {
-      width: "100%",
-      height: "auto",
-      cssClass: "jp-video-360p"
-    },
-    globalVolume: true,
-    smoothPlayBar: true,
-    keyEnabled: true
   });
 
 });

@@ -17,7 +17,6 @@ use Yii;
  * @property integer $pais_falecimento_id
  * @property string $imagem_principal
  *
- * @property ComposicaoCompositor[] $composicaoCompositors
  * @property Composicao[] $composicaos
  * @property Epoca $epoca
  * @property Pais $paisNascimento
@@ -48,26 +47,11 @@ class Compositor extends \yii\db\ActiveRecord
             [['bio'], 'string'],
             [['epoca_id', 'pais_nascimento_id', 'pais_falecimento_id'], 'integer'],
             [['nome_completo'], 'string', 'max' => 155],
-            [['imagem_principal'], 'image', 'extensions' => 'jpg, png'],
+            [['imagem_principal'], 'string', 'max' => 255],
             [['epoca_id'], 'exist', 'skipOnError' => true, 'targetClass' => Epoca::className(), 'targetAttribute' => ['epoca_id' => 'id']],
             [['pais_nascimento_id'], 'exist', 'skipOnError' => true, 'targetClass' => Pais::className(), 'targetAttribute' => ['pais_nascimento_id' => 'id']],
             [['pais_falecimento_id'], 'exist', 'skipOnError' => true, 'targetClass' => Pais::className(), 'targetAttribute' => ['pais_falecimento_id' => 'id']],
         ];
-    }
-
-    public function beforeSave($insert)
-    {
-        if ($insert) {
-            // do something
-        }
-        return parent::beforeSave($insert);
-    }
-    public function afterSave($insert, $changedAttributes)
-    {
-        if ($insert) {
-            // do something
-        }
-        return parent::afterSave($insert, $changedAttributes);
     }
 
     /**
@@ -77,23 +61,15 @@ class Compositor extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'nome_completo' => 'Nome completo',
-            'data_nascimento' => 'Data nascimento',
+            'nome_completo' => 'Nome Completo',
+            'data_nascimento' => 'Data Nascimento',
             'bio' => 'Bio',
-            'epoca_id' => 'Epoca',
-            'pais_nascimento_id' => 'Pais nascimento',
-            'data_falecimento' => 'Data falecimento',
-            'pais_falecimento_id' => 'Pais falecimento',
-            'imagem_principal' => 'Imagem principal',
+            'epoca_id' => 'Epoca ID',
+            'pais_nascimento_id' => 'Pais Nascimento',
+            'data_falecimento' => 'Data Falecimento',
+            'pais_falecimento_id' => 'Pais Falecimento',
+            'imagem_principal' => 'Imagem Principal',
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getComposicaoCompositors()
-    {
-        return $this->hasMany(ComposicaoCompositor::className(), ['compositor_id' => 'id']);
     }
 
     /**
@@ -101,7 +77,7 @@ class Compositor extends \yii\db\ActiveRecord
      */
     public function getComposicaos()
     {
-        return $this->hasMany(Composicao::className(), ['id' => 'composicao_id'])->viaTable('composicao_compositor', ['compositor_id' => 'id']);
+        return $this->hasMany(Composicao::className(), ['compositor_id' => 'id']);
     }
 
     /**
