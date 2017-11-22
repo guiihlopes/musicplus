@@ -12,7 +12,7 @@ $(document).ready(function () {
     ], {
       playlistOptions: {
         enableRemoveControls: true,
-        autoPlay: false
+        autoPlay: true
       },
       swfPath: "js/jPlayer",
       supplied: "webmv, ogv, m4v, oga, mp3",
