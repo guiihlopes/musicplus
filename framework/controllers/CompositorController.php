@@ -4,7 +4,9 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Compositor;
+use app\models\Composicao;
 use app\models\CompositorSearch;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\web\UploadedFile;
@@ -65,10 +67,15 @@ class CompositorController extends BaseController
      * @param integer $id
      * @return mixed
      */
-    public function actionView($id)
+    public function actionInformacoes($id)
     {
+        $compositor = $this->findModel($id);
+        $musics = new ActiveDataProvider([
+            'query' => Composicao::find()->where(['compositor_id' => $id])
+        ]);
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'musics' => $musics,
+            'model' => $compositor,
         ]);
     }
 

@@ -43,7 +43,7 @@ class Composicao extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['titulo_completo', 'texto_informativo', 'data_composicao', 'pais_id', 'genero_id', 'tonalidade_id', 'partitura_url', 'composicao_url', 'compositor_id'], 'required'],
+            [['titulo_completo', 'texto_informativo', 'data_composicao', 'pais_id', 'genero_id', 'tonalidade_id', 'composicao_url', 'compositor_id'], 'required'],
             [['texto_informativo', 'composicao_url'], 'string'],
             [['data_composicao'], 'safe'],
             [['pais_id', 'genero_id', 'tonalidade_id', 'compositor_id'], 'integer'],

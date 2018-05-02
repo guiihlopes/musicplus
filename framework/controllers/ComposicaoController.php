@@ -70,6 +70,12 @@ class ComposicaoController extends BaseController
             'model' => $this->findModel($id),
         ]);
     }
+    public function actionInformacoes($id)
+    {
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
+    }
 
     /**
      * Creates a new Composicao model.

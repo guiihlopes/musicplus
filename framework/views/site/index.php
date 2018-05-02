@@ -18,10 +18,11 @@ $this->title = 'Music +';
     <div class="row row-sm">
         <?= ListView::widget([
             'dataProvider' => $dataProvider,
-            'summary'=>'',
-            'itemOptions' => ['class' => 'composicao-item'],
+            'summary' => '',
+            'options' => ['tag' => false],
+            'itemOptions' => ['tag' => false],
             'itemView' => function ($model, $key, $index, $widget) {
-                return $this->render('/composicao/_composicaoItem', [
+                return $this->render('/compositor/_compositorItem', [
                     'model' => $model,
                 ]);
             },

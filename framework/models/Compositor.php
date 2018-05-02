@@ -75,7 +75,7 @@ class Compositor extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getComposicaos()
+    public function getComposicoes()
     {
         return $this->hasMany(Composicao::className(), ['compositor_id' => 'id']);
     }

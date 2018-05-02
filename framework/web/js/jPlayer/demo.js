@@ -2,17 +2,10 @@ $(document).ready(function () {
   var myPlaylist = new jPlayerPlaylist({
     jPlayer: "#jplayer_N",
     cssSelectorAncestor: "#jp_container_N"
-  }, [
-      {
-        title: "Bubble",
-        artist: "Miaow",
-        mp3: "http://flatfull.com/themes/assets/musics/Miaow-07-Bubble.mp3",
-        oga: "http://flatfull.com/themes/assets/musics/Miaow-07-Bubble.ogg",
-      },
-    ], {
+  }, [], {
       playlistOptions: {
         enableRemoveControls: true,
-        autoPlay: true
+        autoPlay: false
       },
       swfPath: "js/jPlayer",
       supplied: "webmv, ogv, m4v, oga, mp3",
@@ -37,6 +30,7 @@ $(document).ready(function () {
     const isActiveOverlay = overlay.hasClass('active');
     const href = $(this).attr('href');
     const musicInfo = parentItem.find('.padder-v');
+    const musicColor = musicInfo.data('color');
     const musicTitle = musicInfo.find('a:first-child').text();
     const artistName = musicInfo.find('a:last-child').text();
     const music = {
@@ -44,6 +38,8 @@ $(document).ready(function () {
       artist: artistName,
       mp3: href,
     };
+
+    $(".vbox > footer").css('background', musicColor);
 
     removeAllActives();
     if (!isActiveOverlay) {

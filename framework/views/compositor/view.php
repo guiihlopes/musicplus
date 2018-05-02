@@ -1,43 +1,54 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Compositor */
 
-$this->title = $model->id;
+$this->title = $model->nome_completo;
 $this->params['breadcrumbs'][] = ['label' => 'Compositors', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="compositor-view">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'id',
-            'nome_completo',
-            'data_nascimento',
-            'bio:ntext',
-            'epoca_id',
-            'pais_nascimento_id',
-            'data_falecimento',
-            'pais_falecimento_id',
-            'imagem_principal',
-        ],
-    ]) ?>
-
-</div>
+<section class="w-f-md">
+	<section class="hbox stretch bg-black dker">
+		<!-- side content -->
+		<aside class="col-sm-5 no-padder" id="sidebar">
+			<section class="vbox animated fadeInUp">
+				<section class="scrollable">
+					<div class="m-t-n-xxs item pos-rlt">
+						<div class="top text-right">
+							<span class="musicbar bg-success bg-empty inline m-r-lg m-t" style="width:25px;height:30px">
+								<span class="bar1 a3 lter"></span>
+								<span class="bar2 a5 lt"></span>
+								<span class="bar3 a1 bg"></span>
+								<span class="bar4 a4 dk"></span>
+								<span class="bar5 a2 dker"></span>
+							</span>
+						</div>
+						<div class="bottom gd bg-info wrapper-lg">
+							<span class="pull-right text-sm"><?= $model->epoca->descricao ?> <br>Época</span>
+							<span class="h2 font-thin"><?= $model->nome_completo ?></span>
+						</div>
+						<img class="img-full" src="<?= Url::toRoute($model->imagem_principal) ?>" alt="...">
+					</div>
+					<div class="container">
+						<h2>Biografia</h2>
+						<p><?= $model->bio ?></p>
+					</div>
+				</section>
+			</section>
+		</aside>
+		<!-- / side content -->
+		<section class="col-sm-4 no-padder bg">
+			<section class="vbox">
+				<section class="scrollable hover">
+					<?= $this->render('/compositor/_listaComposicao', [
+						'model' => $musics,
+					]); ?>
+				</section>
+			</section>
+		</section>
+	</section>
+</section>

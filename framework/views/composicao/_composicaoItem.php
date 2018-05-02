@@ -1,7 +1,7 @@
 <?php
     use yii\helpers\Url;
 ?>
-<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+<div class="col-xs-4 col-sm-3 col-md-2 col-lg-1">
     <div class="item">
         <div class="pos-rlt">
             <div class="item-overlay opacity r r-2x bg-black">
@@ -28,12 +28,12 @@
                 </div>
             </div>
             <a href="#">
-                <img src="<?= Url::toRoute($model->partitura_url) ?>" alt="" class="r r-2x img-full">
+                <img src="<?= $model->partitura_url ? Url::toRoute($model->partitura_url) : Url::toRoute('images/p9.jpg')?>" alt="" class="r r-2x img-full">
             </a>
         </div>
-        <div class="padder-v">
-            <a href="#" class="text-ellipsis"><?= $model->titulo_completo ?></a>
-            <a href="#" class="text-ellipsis text-xs text-muted"><?= $model->compositor->nome_completo ?></a>
+        <div class="padder-v" data-color="<?= $model->tonalidade->cor ?>">
+            <a href="<?= Url::toRoute(['/composicao/informacoes', 'id' => $model->id])?>" class="text-ellipsis"><?= $model->titulo_completo ?></a>
+            <a href="<?= Url::toRoute(['/compositor/informacoes', 'id' => $model->compositor->id])  ?>" class="text-ellipsis text-xs text-muted"><?= $model->compositor->nome_completo ?></a>
         </div>
     </div>
 </div>
