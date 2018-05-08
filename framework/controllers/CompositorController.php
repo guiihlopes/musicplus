@@ -124,6 +124,24 @@ class CompositorController extends BaseController
         }
     }
 
+    public function actionFavorito($id)
+    {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+        $usuario_id = Yii::$app->user->identity->id;
+
+        $model = new \app\models\CompositorUsuario();
+
+        $model->usuario_id = $usuario_id;
+        $model->compositor_id = $id;
+        try {
+            $model->save();
+            return true;
+        } catch (\yii\base\Exception $exception) {
+            return false;
+        }
+    }
+
     /**
      * Deletes an existing Compositor model.
      * If deletion is successful, the browser will be redirected to the 'index' page.

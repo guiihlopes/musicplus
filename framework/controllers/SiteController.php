@@ -70,7 +70,8 @@ class SiteController extends BaseController
         }
 
         $dataProvider = new ActiveDataProvider([
-            'query' => Compositor::find()->innerJoin('composicao', 'composicao.compositor_id = compositor.id')
+            'query' => Compositor::find()
+                        ->innerJoin('composicao', 'composicao.compositor_id = compositor.id')
         ]);
 
         return $this->render('index', [
