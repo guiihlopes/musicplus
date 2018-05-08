@@ -5,7 +5,8 @@ namespace app\controllers;
 use Yii;
 use yii\filters\AccessControl;
 use app\models\Usuario;
-use app\models\CompositorSearch;
+use app\models\Compositor;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
@@ -68,8 +69,9 @@ class SiteController extends BaseController
             return $this->redirect(['usuario/index']);
         }
 
-        $searchModel = new CompositorSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = new ActiveDataProvider([
+            'query' => Compositor::find()->innerJoin('composicao', 'composicao.compositor_id = compositor.id')
+        ]);
 
         return $this->render('index', [
             'dataProvider' => $dataProvider,
