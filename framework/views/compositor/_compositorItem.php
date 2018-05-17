@@ -9,8 +9,11 @@
         $.ajax({
             url: $(this).attr('href'),
             success: function(data) {
-                if (data) {
-                    link.find("i").attr('class', 'fa fa-heart');
+                var icon = link.find("i");
+                if (data === true) {
+                    icon.attr('class', 'fa fa-heart');
+                }else if (data == "deleted") {
+                    icon.attr('class', 'fa fa-heart-o');
                 }
                 return true;
             }

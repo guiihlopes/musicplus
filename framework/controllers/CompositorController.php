@@ -138,7 +138,9 @@ class CompositorController extends BaseController
             $model->save();
             return true;
         } catch (\yii\base\Exception $exception) {
-            return false;
+            $model = $model->find()->where(['usuario_id' => $usuario_id])->andWhere(['compositor_id' => $id])->one();
+            $model->delete();
+            return "deleted";
         }
     }
 
