@@ -16,13 +16,13 @@ As principais tecnologias utilizadas são:
 - [![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](http://www.yiiframework.com/)
 
 ## Rodando a aplicação
-Para rodar o projeto, instale os seguintes programas na sua maquina:
+Para rodar o projeto, instale os seguintes programas na sua máquina:
 
 - [XAMPP](https://www.apachefriends.org/pt_br/index.html)
 - [Composer](https://getcomposer.org/)
 
 
-** APOS INSTALAR O COMPOSER EXECUTE O SEGUINTE COMANDO **
+** APÓS INSTALAR O COMPOSER EXECUTE O SEGUINTE COMANDO **
 
 ```bash
 $ composer global require "fxp/composer-asset-plugin:^1.3.1"
@@ -30,13 +30,24 @@ $ composer global require "fxp/composer-asset-plugin:^1.3.1"
 
 Clone este repositório.
 
-Suba o servico do APACHE e do MySQL, apos isso, importe o dump do banco de dados para o MySQL.
+Suba o serviço do APACHE e do MySQL, após isso, importe o dump do banco de dados para o MySQL.
 
-Para conseguir rodar o sistema vá ao seu terminal e execute:
+Para conseguir rodar o sistema vá ao seu terminal (na pasta do repositório clonado) e execute para instalar o composer e suas dependências no projeto:
 
 ```bash
 $ cd framework/
 $ composer install
+```
+
+** CASO A VERSÃO DO PHP SEJA SUPERIOR À 7.0, EXECUTE O SEGUINTE COMANDO **
+
+```bash
+$ composer update
+```
+
+Para iniciar o serviço do Yii e acessar o Portal execute:
+
+```bash
 $ php yii serve
 ```
 

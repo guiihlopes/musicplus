@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 01, 2017 at 05:35 AM
+-- Generation Time: Jun 11, 2018 at 10:15 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -35,6 +35,14 @@ CREATE TABLE `arte_afim` (
   `autor` varchar(155) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `arte_afim`
+--
+
+INSERT INTO `arte_afim` (`id`, `data`, `descricao`, `autor`) VALUES
+(1, '0000-00-00', 'Lorem ipsum 1234', 'Autor 1234'),
+(2, '0000-00-00', 'Atque nihil est in at magni ut nemo nisi quibusdam consectetur ut laudantium', 'Iste aute hic omnis in aut adipisci fugiat blanditiis et');
+
 -- --------------------------------------------------------
 
 --
@@ -65,6 +73,14 @@ CREATE TABLE `bebida` (
   `pais_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `bebida`
+--
+
+INSERT INTO `bebida` (`id`, `nome`, `data`, `teor_alcoolico`, `amadurecimento`, `descricao`, `safra`, `tipo`, `uva`, `pais_id`) VALUES
+(1, 'vinho tinto', '0000-00-00', 50, 'Consectetur natus ipsam do porro quo accusantium eos aute autem ipsum et earum unde nihil sit', 'Aliquip aut magni aut beatae consequuntur in aliqua Itaque ad', 'Sunt pariatur Suscipit qui repudiandae laudantium rerum ea', 'Adipisicing est nostrud ex aliqua Quia in Nam aut magnam natus minim voluptatem tempora non', 'Lorem architecto tempor ea aut numquam et molestiae molestiae est cupidatat duis odit', 46),
+(2, 'Sunt perferendis elit aut fugit quisquam in officia impedit amet do repudiandae ut consequatur i', '0000-00-00', 50, 'Dolore nulla non duis magnam et optio laboriosam excepturi', 'Nostrum et placeat minus dignissimos tempora odit voluptatem eveniet ad id vel cum unde veritatis', 'Eum totam labore ut beatae obcaecati quaerat deleniti doloribus in molestiae rerum enim eos unde et dolorem', 'Quia dolores amet placeat tempore culpa facere qui rerum esse tempora hic suscipit voluptate culpa aut explicabo Aut voluptatem', 'Tenetur itaque rerum dolore itaque Nam quia nulla quisquam quas dolore velit facilis ipsam recusandae Animi nulla', 74);
+
 -- --------------------------------------------------------
 
 --
@@ -90,19 +106,21 @@ CREATE TABLE `composicao` (
   `pais_id` int(11) NOT NULL,
   `genero_id` int(11) NOT NULL,
   `tonalidade_id` int(11) NOT NULL,
-  `partitura_url` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `composicao_compositor`
---
-
-CREATE TABLE `composicao_compositor` (
-  `composicao_id` int(11) NOT NULL,
+  `partitura_url` varchar(255) DEFAULT NULL,
+  `composicao_url` text NOT NULL,
   `compositor_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `composicao`
+--
+
+INSERT INTO `composicao` (`id`, `titulo_completo`, `texto_informativo`, `data_composicao`, `pais_id`, `genero_id`, `tonalidade_id`, `partitura_url`, `composicao_url`, `compositor_id`) VALUES
+(2, 'Musica 14235', 'fhgviudjsokrneihuviejowkpfk new uifojekow fijewb fuejwik ewb fejwkofpewifuhiewfjikw efnwehnfj iekwofewpkijfouhiewfjoeikwofpew bfweyhufjiekwopfiejwouibgwyfhijewikpo fewhfiwufjoekpw', '2017-11-01', 21, 4, 1, 'images/p1.jpg', 'http://flatfull.com/themes/assets/musics/Miaow-07-Bubble.mp3', 3),
+(3, 'teste', 'fhgviudjsokrneihuviejowkpfk new uifojekow fijewb fuejwik ewb fejwkofpewifuhiewfjikw efnwehnfj iekwofewpkijfouhiewfjoeikwofpew bfweyhufjiekwopfiejwouibgwyfhijewikpo fewhfiwufjoekpw', '2017-11-01', 21, 4, 2, 'images/p1.jpg', 'http://flatfull.com/themes/assets/musics/Miaow-07-Bubble.mp3', 3),
+(4, 'Musica de teste', 'lorem ipsum dolor sit amet consectur', '0000-00-00', 2, 3, 1, NULL, 'https://dragon-g3.sscdn.co/palcomp3/0/e/a/3/brunofelix_voodookings-faixa-9-859bb4.mp3', 3),
+(5, 'Aliquam et eligendi iure id voluptate ipsa quos asperiores impedit iusto eos sint excepturi Nam cillum repudiandae in', 'Quam rem ea omnis tempor velit tempora non delectus ullam corporis ipsa excepturi est aperiam qui maxime', '0000-00-00', 121, 8, 2, NULL, 'https://pegasus-g4.sscdn.co/palcomp3/2/b/5/8/brunofelix_voodookings-bruno-felix-thursday-in-blues-d47223.mp3', 3),
+(6, 'Apresentacao', 'fhdsjfkdsfsd', '0000-00-00', 6, 4, 3, NULL, 'https://pegasus-g4.sscdn.co/palcomp3/2/b/5/8/brunofelix_voodookings-bruno-felix-thursday-in-blues-d47223.mp3', 5);
 
 -- --------------------------------------------------------
 
@@ -144,6 +162,16 @@ CREATE TABLE `compositor` (
   `imagem_principal` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `compositor`
+--
+
+INSERT INTO `compositor` (`id`, `nome_completo`, `data_nascimento`, `bio`, `epoca_id`, `pais_nascimento_id`, `data_falecimento`, `pais_falecimento_id`, `imagem_principal`) VALUES
+(2, 'Compositor 2', '0000-00-00', 'Lorem ipsum', 2, 46, NULL, NULL, 'uploads/f652d7cbda0a63cdc9504d347da7058d.png'),
+(3, 'Compositor 3', '0000-00-00', 'Lorem ipsum', 3, 4, NULL, NULL, 'uploads/734a2b9d7929280331ee9432141fcb5c.png'),
+(4, 'Compositor 4', '0000-00-00', 'Non doloribus natus do rerum consequatur', 7, 62, NULL, 129, 'uploads/734a2b9d7929280331ee9432141fcb5c.png'),
+(5, 'Compositor 5', '0000-00-00', 'kfdskfdks', 5, 5, NULL, NULL, 'uploads/f652d7cbda0a63cdc9504d347da7058d.png');
+
 -- --------------------------------------------------------
 
 --
@@ -166,6 +194,14 @@ CREATE TABLE `compositor_usuario` (
   `usuario_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `compositor_usuario`
+--
+
+INSERT INTO `compositor_usuario` (`compositor_id`, `usuario_id`) VALUES
+(3, 3),
+(5, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -176,6 +212,20 @@ CREATE TABLE `epoca` (
   `id` int(11) NOT NULL,
   `descricao` varchar(155) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `epoca`
+--
+
+INSERT INTO `epoca` (`id`, `descricao`) VALUES
+(1, 'Medieval'),
+(2, 'Renascença'),
+(3, 'Barroco'),
+(4, 'Clássico'),
+(5, 'Romântico'),
+(6, 'Impressionismo'),
+(7, 'Moderno'),
+(8, 'Contemporâneo');
 
 -- --------------------------------------------------------
 
@@ -210,6 +260,20 @@ CREATE TABLE `genero` (
   `descricao` varchar(155) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `genero`
+--
+
+INSERT INTO `genero` (`id`, `descricao`) VALUES
+(1, 'Concerto'),
+(2, 'Sinfonia'),
+(3, 'Sonata'),
+(4, 'Quarteto'),
+(5, 'Quinteto'),
+(6, 'Sexteto'),
+(7, 'Opera'),
+(8, 'Abertura');
+
 -- --------------------------------------------------------
 
 --
@@ -234,6 +298,13 @@ CREATE TABLE `marco_historico` (
   `descricao` text NOT NULL,
   `pais_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `marco_historico`
+--
+
+INSERT INTO `marco_historico` (`id`, `data`, `descricao`, `pais_id`) VALUES
+(1, '0000-00-00', 'Marco histórico 123456', 16);
 
 -- --------------------------------------------------------
 
@@ -534,6 +605,15 @@ CREATE TABLE `tonalidade` (
   `cor` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tonalidade`
+--
+
+INSERT INTO `tonalidade` (`id`, `nome`, `cor`) VALUES
+(1, 'C', 'red'),
+(2, 'C#', 'orange'),
+(3, 'G', 'yellow');
+
 -- --------------------------------------------------------
 
 --
@@ -558,7 +638,12 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id`, `nome`, `sobrenome`, `email`, `senha`, `data_nascimento`, `perfil_id`, `genero`, `status`) VALUES
 (1, 'teste', 'teste', 'teste@teste.com', '698dc19d489c4e4db73e28a713eab07b', '2017-08-11', 1, 0, 1),
-(2, 'Teste', 'Testando', 'teste123@teste.com', '698dc19d489c4e4db73e28a713eab07b', NULL, 2, 1, 1);
+(3, 'Teste', 'Testando', 'teste123@teste.com', '698dc19d489c4e4db73e28a713eab07b', NULL, 2, 1, 1),
+(4, 'aaa', 'bbb', 'teste1234@teste.com', '698dc19d489c4e4db73e28a713eab07b', NULL, 2, 1, 1),
+(5, 'aaa', 'bbb', 'teste12345@teste.com', '698dc19d489c4e4db73e28a713eab07b', NULL, 2, 1, 1),
+(6, 'teste', 'sobrenome', 'teste1@teste.com', '698dc19d489c4e4db73e28a713eab07b', NULL, 2, 0, 1),
+(7, 'Apresentação', 'Teste', 'nada@nada.com', 'a77b4f006a4994d245a12247b8e4082c', NULL, 2, 1, 1),
+(8, 'apresentacao', 'pre banca', 'banca@banca.com', '33284cfe03da16025c9641fb5dc03063', NULL, 2, 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -600,15 +685,8 @@ ALTER TABLE `composicao`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_composicao_pais1_idx` (`pais_id`),
   ADD KEY `fk_composicao_genero1_idx` (`genero_id`),
-  ADD KEY `fk_composicao_tonalidade1_idx` (`tonalidade_id`);
-
---
--- Indexes for table `composicao_compositor`
---
-ALTER TABLE `composicao_compositor`
-  ADD PRIMARY KEY (`composicao_id`,`compositor_id`),
-  ADD KEY `fk_composicao_compositor_compositor1_idx` (`compositor_id`),
-  ADD KEY `fk_composicao_compositor_composicao1_idx` (`composicao_id`);
+  ADD KEY `fk_composicao_tonalidade1_idx` (`tonalidade_id`),
+  ADD KEY `compositor_id` (`compositor_id`);
 
 --
 -- Indexes for table `composicao_imagem`
@@ -734,32 +812,32 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `arte_afim`
 --
 ALTER TABLE `arte_afim`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `bebida`
 --
 ALTER TABLE `bebida`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `composicao`
 --
 ALTER TABLE `composicao`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `compositor`
 --
 ALTER TABLE `compositor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `epoca`
 --
 ALTER TABLE `epoca`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `genero`
 --
 ALTER TABLE `genero`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `imagem`
 --
@@ -769,7 +847,7 @@ ALTER TABLE `imagem`
 -- AUTO_INCREMENT for table `marco_historico`
 --
 ALTER TABLE `marco_historico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `pais`
 --
@@ -784,12 +862,12 @@ ALTER TABLE `perfil`
 -- AUTO_INCREMENT for table `tonalidade`
 --
 ALTER TABLE `tonalidade`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- Constraints for dumped tables
 --
@@ -818,16 +896,10 @@ ALTER TABLE `bebida_imagem`
 -- Constraints for table `composicao`
 --
 ALTER TABLE `composicao`
+  ADD CONSTRAINT `composicao_ibfk_1` FOREIGN KEY (`compositor_id`) REFERENCES `compositor` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_composicao_genero1` FOREIGN KEY (`genero_id`) REFERENCES `genero` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_composicao_pais1` FOREIGN KEY (`pais_id`) REFERENCES `pais` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_composicao_tonalidade1` FOREIGN KEY (`tonalidade_id`) REFERENCES `tonalidade` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `composicao_compositor`
---
-ALTER TABLE `composicao_compositor`
-  ADD CONSTRAINT `fk_composicao_compositor_composicao1` FOREIGN KEY (`composicao_id`) REFERENCES `composicao` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_composicao_compositor_compositor1` FOREIGN KEY (`compositor_id`) REFERENCES `compositor` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `composicao_imagem`
