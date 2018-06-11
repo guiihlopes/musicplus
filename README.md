@@ -40,6 +40,12 @@ $ composer install
 $ php yii serve
 ```
 
+** CASO A VERSÃO DO PHP SEJA SUPERIOR À 7.0, EXECUTE O SEGUINTE COMANDO **
+
+```bash
+$ composer update
+```
+
 Se tudo der certo, acesse <http://localhost/nome_do_projeto>. Se algo der errado, procure alguém da equipe :P.
 
 ## Contribuindo
