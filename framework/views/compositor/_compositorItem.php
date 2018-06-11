@@ -36,7 +36,7 @@ JS;
               <?php if (!Yii::$app->user->isGuest) { ?>
                 <div class="bottom padder m-b-sm">
                     <a href="<?= $favorite_user_url ?>" class="pull-right favoriteCompositorLink">
-                        <i class="fa fa-heart<?= count($model->getUsuarios()->where(['id' => Yii::$app->user->identity->id])->one()) ? "" : "-o" ?>"></i>
+                        <i class="fa fa-heart<?= count($model->getUsuarios()->where(['id' => Yii::$app->user->identity->id])->all()) ? "" : "-o" ?>"></i>
                     </a>
                 </div>                  
               <?php } ?>
