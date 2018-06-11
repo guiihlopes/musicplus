@@ -33,11 +33,13 @@ JS;
                   <i class="fa fa-plus-circle text"></i> Conhecer
                 </a>
               </div>
-              <div class="bottom padder m-b-sm">
-                <a href="<?= $favorite_user_url ?>" class="pull-right favoriteCompositorLink">
-                    <i class="fa fa-heart<?= count($model->getUsuarios()->where(['id' => Yii::$app->user->identity->id])->one()) ? "" : "-o" ?>"></i>
-                </a>
-            </div>
+              <?php if (!Yii::$app->user->isGuest) { ?>
+                <div class="bottom padder m-b-sm">
+                    <a href="<?= $favorite_user_url ?>" class="pull-right favoriteCompositorLink">
+                        <i class="fa fa-heart<?= count($model->getUsuarios()->where(['id' => Yii::$app->user->identity->id])->one()) ? "" : "-o" ?>"></i>
+                    </a>
+                </div>                  
+              <?php } ?>
           </div>
           <a href="#">
               <img src="<?= $model->imagem_principal ? Url::toRoute($model->imagem_principal) : Url::toRoute('images/p9.jpg')?>" alt="" class="r r-2x img-full">
