@@ -23,10 +23,10 @@ class ComposicaoController extends BaseController
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['index', 'update', 'create', 'view', 'delete'],
+                'only' => ['index', 'update', 'create', 'delete'],
                 'rules' => [
                     [
-                        'actions' => ['index', 'update', 'create', 'view', 'delete'],
+                        'actions' => ['index', 'update', 'create', 'delete'],
                         'allow' => true,
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {

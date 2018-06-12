@@ -13,7 +13,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <section class="w-f-md">
 	<section class="hbox stretch bg-black dker">
-		<!-- side content -->
 		<aside class="col-sm-5 no-padder" id="sidebar">
 			<section class="vbox animated fadeInUp">
 				<section class="scrollable">
@@ -40,7 +39,6 @@ $this->params['breadcrumbs'][] = $this->title;
 				</section>
 			</section>
 		</aside>
-		<!-- / side content -->
 		<section class="col-sm-4 no-padder bg">
 			<section class="vbox">
 				<section class="scrollable hover">
