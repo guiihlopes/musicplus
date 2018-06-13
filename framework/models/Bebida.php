@@ -79,7 +79,7 @@ class Bebida extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getBebidaImagems()
+    public function getBebidaImagens()
     {
         return $this->hasMany(BebidaImagem::className(), ['bebida_id' => 'id']);
     }
@@ -87,7 +87,7 @@ class Bebida extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getImagems()
+    public function getImagens()
     {
         return $this->hasMany(Imagem::className(), ['id' => 'imagem_id'])->viaTable('bebida_imagem', ['bebida_id' => 'id']);
     }

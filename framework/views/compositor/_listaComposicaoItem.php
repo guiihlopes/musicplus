@@ -8,6 +8,6 @@
       class="m-r-sm pull-left">
       <?= $model->titulo_completo ?>
     </a>
-    <span class="text-muted"> -- 04:35</span>
+    <span class="text-muted"> -- <?= $model->pais->nome ?></span>
   </div>
 </li>

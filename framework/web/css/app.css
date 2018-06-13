@@ -3352,22 +3352,27 @@ a.bg-light:focus {
 }
 .thumb-lg {
   width: 128px;
+  height: 128px;
   display: inline-block;
 }
 .thumb-md {
   width: 64px;
+  height: 64px;
   display: inline-block;
 }
 .thumb {
   width: 50px;
+  height: 50px;
   display: inline-block;
 }
 .thumb-sm {
   width: 40px;
+  height: 40px;
   display: inline-block;
 }
 .thumb-xs {
   width: 30px;
+  height: 30px;
   display: inline-block;
 }
 .thumb-wrapper {
@@ -3380,8 +3385,9 @@ a.bg-light:focus {
 .thumb-md img,
 .thumb-lg img,
 .thumb-btn img {
-  height: auto;
+  height: 100%;
   max-width: 100%;
+  object-fit: cover;
   vertical-align: middle;
 }
 .img-full {

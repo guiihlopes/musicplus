@@ -98,7 +98,7 @@ $userMenu = function ($className = null, $arrowClass = null) {
                 <div class="list-group list-group-alt">
                   <a href="#" class="media list-group-item">
                     <span class="pull-left thumb-sm">
-                      <img src="images/a0.png" alt="..." class="img-circle">
+                      <img src="<?= Url::toRoute('images/a0.png') ?>" alt="..." class="img-circle">
                     </span>
                     <span class="media-body block m-b-none">
                       Use awesome animate.css<br>
@@ -122,7 +122,7 @@ $userMenu = function ($className = null, $arrowClass = null) {
           <li class="dropdown">
             <a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown">
               <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
-                <img src="images/a0.png" alt="...">
+                <img src="<?= Url::toRoute('images/a0.png') ?>" alt="...">
               </span>
                 <?= Yii::$app->user->identity->nome . ' ' . Yii::$app->user->identity->sobrenome ?>
               <b class="caret"></b>
@@ -192,7 +192,7 @@ $userMenu = function ($className = null, $arrowClass = null) {
                   <div class="dropdown dropup wrapper-sm clearfix">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                       <span class="thumb-sm avatar pull-left m-l-xs">                        
-                        <img src="images/a3.png" class="dker" alt="...">
+                        <img src="<?= Url::toRoute('images/a3.png') ?>" class="dker" alt="...">
                         <i class="on b-black"></i>
                       </span>
                       <span class="hidden-nav-xs clear">

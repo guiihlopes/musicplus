@@ -64,7 +64,7 @@ class MarcoHistorico extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getMarcoHistoricoImagems()
+    public function getMarcoHistoricoImagens()
     {
         return $this->hasMany(MarcoHistoricoImagem::className(), ['marco_historico_id' => 'id']);
     }
@@ -72,7 +72,7 @@ class MarcoHistorico extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getImagems()
+    public function getImagens()
     {
         return $this->hasMany(Imagem::className(), ['id' => 'imagem_id'])->viaTable('marco_historico_imagem', ['marco_historico_id' => 'id']);
     }

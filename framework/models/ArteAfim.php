@@ -54,7 +54,7 @@ class ArteAfim extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getArteAfimImagems()
+    public function getArteAfimImagens()
     {
         return $this->hasMany(ArteAfimImagem::className(), ['arte_id' => 'id']);
     }
@@ -62,7 +62,7 @@ class ArteAfim extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getImagems()
+    public function getImagens()
     {
         return $this->hasMany(Imagem::className(), ['id' => 'imagem_id'])->viaTable('arte_afim_imagem', ['arte_id' => 'id']);
     }

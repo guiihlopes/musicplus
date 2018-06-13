@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Imagem do compositor',
                 'format' => 'html',
                 'value' => function ($data) {
-                    return '<img src="'. Url::toRoute($data['imagem_principal']) .'" />';
+                    return '<img class="thumb-lg" src="'. Url::toRoute($data['imagem_principal']) .'" />';
                 }
             ],
 
