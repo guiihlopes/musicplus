@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "30d87455c0635b1e94432038df489859",
+    "content-hash": "43acda0b7ea26905738221cc70de7223",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -523,60 +523,6 @@
             "time": "2017-09-29T06:18:14+00:00"
         },
         {
-            "name": "kartik-v/yii2-widget-datepicker",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kartik-v/yii2-widget-datepicker.git",
-                "reference": "eb7e829b8a0b341dc22ef2dc28d1bb4ff08e3550"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-widget-datepicker/zipball/eb7e829b8a0b341dc22ef2dc28d1bb4ff08e3550",
-                "reference": "eb7e829b8a0b341dc22ef2dc28d1bb4ff08e3550",
-                "shasum": ""
-            },
-            "require": {
-                "kartik-v/yii2-krajee-base": "~1.7"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.4.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "kartik\\date\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://www.krajee.com/"
-                }
-            ],
-            "description": "Enhanced Yii2 wrapper for the bootstrap datepicker plugin (sub repo split from yii2-widgets).",
-            "homepage": "https://github.com/kartik-v/yii2-widget-datepicker",
-            "keywords": [
-                "date",
-                "extension",
-                "form",
-                "jquery",
-                "picker",
-                "plugin",
-                "select2",
-                "widget",
-                "yii2"
-            ],
-            "time": "2017-09-06T06:18:08+00:00"
-        },
-        {
             "name": "kartik-v/yii2-widget-fileinput",
             "version": "dev-master",
             "source": {
@@ -952,125 +898,6 @@
     ],
     "packages-dev": [
         {
-            "name": "2amigos/yii2-file-upload-widget",
-            "version": "1.0.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/2amigos/yii2-file-upload-widget.git",
-                "reference": "2fd078f589d4acdd2cbfb70eea88d526480b0102"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/2amigos/yii2-file-upload-widget/zipball/2fd078f589d4acdd2cbfb70eea88d526480b0102",
-                "reference": "2fd078f589d4acdd2cbfb70eea88d526480b0102",
-                "shasum": ""
-            },
-            "require": {
-                "2amigos/yii2-gallery-widget": "~1.0",
-                "bower-asset/blueimp-file-upload": "~9.9",
-                "yiisoft/yii2": "~2.0.0",
-                "yiisoft/yii2-bootstrap": "~2.0.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "dosamigos\\fileupload\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "2amigOS! Consulting Group",
-                    "email": "hola@2amigos.us",
-                    "homepage": "http://2amigos.us",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Blueimp file upload widget for the Yii framework",
-            "homepage": "https://github.com/2amigos/yii2-file-upload-widget",
-            "keywords": [
-                "2amigos",
-                "upload",
-                "widget",
-                "yii",
-                "yii 2",
-                "yii2"
-            ],
-            "time": "2017-10-17T11:18:48+00:00"
-        },
-        {
-            "name": "2amigos/yii2-gallery-widget",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/2amigos/yii2-gallery-widget.git",
-                "reference": "0ce7de28d05a4662da7698773993b5a0245a6136"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/2amigos/yii2-gallery-widget/zipball/0ce7de28d05a4662da7698773993b5a0245a6136",
-                "reference": "0ce7de28d05a4662da7698773993b5a0245a6136",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/blueimp-gallery": "~2.17.0",
-                "yiisoft/yii2": "~2.0.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0",
-                "scrutinizer/ocular": "~1.1"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "asset-installer-paths": {
-                    "npm-asset-library": "vendor/npm",
-                    "bower-asset-library": "vendor/bower"
-                },
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "dosamigos\\gallery\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "2amigOS! Consulting Group",
-                    "email": "hola@2amigos.us",
-                    "homepage": "http://2amigos.us",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Blueimp gallery widget for the Yii framework",
-            "homepage": "https://github.com/2amigos/yii2-gallery-widget",
-            "keywords": [
-                "2amigos",
-                "gallery",
-                "widget",
-                "yii",
-                "yii 2",
-                "yii2"
-            ],
-            "time": "2017-09-09T16:01:44+00:00"
-        },
-        {
             "name": "behat/gherkin",
             "version": "v4.5.1",
             "source": {
@@ -1128,134 +955,6 @@
                 "parser"
             ],
             "time": "2017-08-30T11:04:43+00:00"
-        },
-        {
-            "name": "bower-asset/blueimp-canvas-to-blob",
-            "version": "v3.14.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/blueimp/JavaScript-Canvas-to-Blob.git",
-                "reference": "9f3deb2e710d39c72a988559609d9dc9a319de0b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/blueimp/JavaScript-Canvas-to-Blob/zipball/9f3deb2e710d39c72a988559609d9dc9a319de0b",
-                "reference": "9f3deb2e710d39c72a988559609d9dc9a319de0b",
-                "shasum": ""
-            },
-            "type": "bower-asset-library"
-        },
-        {
-            "name": "bower-asset/blueimp-file-upload",
-            "version": "v9.21.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/blueimp/jQuery-File-Upload.git",
-                "reference": "e6f059023afdae3efe9ce66970745254caa80256"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/blueimp/jQuery-File-Upload/zipball/e6f059023afdae3efe9ce66970745254caa80256",
-                "reference": "e6f059023afdae3efe9ce66970745254caa80256",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/blueimp-canvas-to-blob": ">=2.1.1",
-                "bower-asset/blueimp-load-image": ">=1.13.0",
-                "bower-asset/blueimp-tmpl": ">=2.5.4",
-                "bower-asset/jquery": ">=1.6"
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "js/jquery.fileupload.js"
-                ],
-                "bower-asset-ignore": [
-                    "/*.*",
-                    "/cors",
-                    "css/jquery-ui-demo-ie8.css",
-                    "css/jquery-ui-demo.css",
-                    "css/style.css",
-                    "js/app.js",
-                    "js/main.js",
-                    "server",
-                    "test"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "File Upload widget with multiple file selection, drag&amp;drop support, progress bar, validation and preview images.",
-            "keywords": [
-                "bootstrap",
-                "chunk",
-                "cross-domain",
-                "cross-site",
-                "drag",
-                "drop",
-                "file",
-                "gae",
-                "go",
-                "jquery",
-                "multiple",
-                "php",
-                "preview",
-                "progress",
-                "python",
-                "resume",
-                "selection",
-                "upload",
-                "widget"
-            ],
-            "time": "2018-02-19T12:12:29+00:00"
-        },
-        {
-            "name": "bower-asset/blueimp-gallery",
-            "version": "v2.17.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/blueimp/Gallery.git",
-                "reference": "8336bb5934cb623608808601129db3fbf9201a09"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/blueimp/Gallery/zipball/8336bb5934cb623608808601129db3fbf9201a09",
-                "reference": "8336bb5934cb623608808601129db3fbf9201a09",
-                "shasum": ""
-            },
-            "type": "bower-asset-library"
-        },
-        {
-            "name": "bower-asset/blueimp-load-image",
-            "version": "v2.19.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/blueimp/JavaScript-Load-Image.git",
-                "reference": "5660ef0f68a34352f4574351ab86f3ecf82240f2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/blueimp/JavaScript-Load-Image/zipball/5660ef0f68a34352f4574351ab86f3ecf82240f2",
-                "reference": "5660ef0f68a34352f4574351ab86f3ecf82240f2",
-                "shasum": ""
-            },
-            "type": "bower-asset-library"
-        },
-        {
-            "name": "bower-asset/blueimp-tmpl",
-            "version": "v3.11.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/blueimp/JavaScript-Templates.git",
-                "reference": "da7647cb93fff2030e73a701db22c66de76a9919"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/blueimp/JavaScript-Templates/zipball/da7647cb93fff2030e73a701db22c66de76a9919",
-                "reference": "da7647cb93fff2030e73a701db22c66de76a9919",
-                "shasum": ""
-            },
-            "type": "bower-asset-library"
         },
         {
             "name": "bower-asset/typeahead.js",
@@ -1696,16 +1395,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.8.0",
+            "version": "1.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "478465659fd987669df0bd8a9bf22a8710e5f1b6"
+                "reference": "3e01bdad3e18354c3dce54466b7fbe33a9f9f7f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/478465659fd987669df0bd8a9bf22a8710e5f1b6",
-                "reference": "478465659fd987669df0bd8a9bf22a8710e5f1b6",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/3e01bdad3e18354c3dce54466b7fbe33a9f9f7f8",
+                "reference": "3e01bdad3e18354c3dce54466b7fbe33a9f9f7f8",
                 "shasum": ""
             },
             "require": {
@@ -1740,7 +1439,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2018-05-29T17:25:09+00:00"
+            "time": "2018-06-11T23:09:50+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -3857,7 +3556,6 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "kartik-v/yii2-widget-fileinput": 20,
-        "kartik-v/yii2-widget-datepicker": 20,
         "kartik-v/yii2-datecontrol": 20
     },
     "prefer-stable": false,
