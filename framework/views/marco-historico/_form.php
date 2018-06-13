@@ -26,7 +26,7 @@ use app\models\Pais;
     <?= $form->field($model, 'pais_id')->dropDownList(ArrayHelper::map(Pais::find()->all(), 'id', 'nome'), ['prompt' => '']) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Cadastrar' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

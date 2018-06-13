@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\ArteAfim */
 
-$this->title = 'Create Arte Afim';
-$this->params['breadcrumbs'][] = ['label' => 'Arte Afims', 'url' => ['index']];
+$this->title = 'Cadastrar arte afim';
+$this->params['breadcrumbs'][] = ['label' => 'Artes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="arte-afim-create">
