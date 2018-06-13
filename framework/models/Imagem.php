@@ -57,7 +57,6 @@ class Imagem extends \yii\db\ActiveRecord
             'url' => 'Imagem',
         ];
     }
-
     /**
      * @return \yii\db\ActiveQuery
      */

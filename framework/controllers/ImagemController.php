@@ -6,6 +6,7 @@ use Yii;
 use app\models\Imagem;
 use app\models\ImagemSearch;
 use yii\web\Controller;
+use yii\web\UploadedFile;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -65,8 +66,16 @@ class ImagemController extends BaseController
     {
         $model = new Imagem();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            $file = UploadedFile::getInstance($model, 'url');
+            $fileName = $file->name;
+            $extension = $file->getExtension();
+            $model->url = 'uploads/' . md5($fileName . time()) . "." . $extension;
+            if ($model->validate()) {
+                $model->save();
+                $file->saveAs($model->url);
+            }
+            return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -84,8 +93,16 @@ class ImagemController extends BaseController
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            $file = UploadedFile::getInstance($model, 'url');
+            $fileName = $file->name;
+            $extension = $file->getExtension();
+            $model->url = 'uploads/' . md5($fileName . time()) . "." . $extension;
+            if ($model->validate()) {
+                $model->save();
+                $file->saveAs($model->url);
+            }
+            return $this->redirect(['index']);
         } else {
             return $this->render('update', [
                 'model' => $model,

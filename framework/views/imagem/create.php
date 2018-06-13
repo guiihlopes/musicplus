@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Imagem */
 
-$this->title = 'Create Imagem';
-$this->params['breadcrumbs'][] = ['label' => 'Imagems', 'url' => ['index']];
+$this->title = 'Cadastrar imagem';
+$this->params['breadcrumbs'][] = ['label' => 'Imagens', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="imagem-create">

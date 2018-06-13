@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 /* @var $this yii\web\View */
@@ -26,7 +27,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'descricao',
-            'url:url',
+            [
+                'label' => 'Imagem',
+                'format' => 'html',
+                'value' => function ($data) {
+                    return '<img class="thumb-lg" src="'. Url::toRoute($data['url']) .'" />';
+                }
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
