@@ -8,7 +8,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel app\models\ArteAfimSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Arte Afims';
+$this->title = 'Artes';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="arte-afim-index">
@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Arte Afim', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Cadastrar arte', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 <?php Pjax::begin(); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,

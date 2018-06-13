@@ -9,7 +9,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel app\models\CompositorSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Compositors';
+$this->title = 'Compositores';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="compositor-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Compositor', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Cadastrar compositor', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 <?php Pjax::begin(); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,

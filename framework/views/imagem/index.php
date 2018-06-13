@@ -7,7 +7,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel app\models\ImagemSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Imagems';
+$this->title = 'Imagens';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="imagem-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Imagem', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Cadastrar imagem', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 <?php Pjax::begin(); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,
