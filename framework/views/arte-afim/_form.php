@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use yii\widgets\MaskedInput;
+use kartik\datecontrol\DateControl;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\ArteAfim */
@@ -17,11 +17,12 @@ use yii\widgets\MaskedInput;
 
     <?= $form->field($model, 'descricao')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'data')->textInput()->widget(MaskedInput::className(), [
-        'clientOptions' => [
-            'alias' => 'date',
+    <?= $form->field($model, 'data')->widget(DateControl::className(),[
+        'pluginOptions' => [
+            'todayHighlight' => true
         ]
-    ]) ?>
+    ])
+    ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Cadastrar' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

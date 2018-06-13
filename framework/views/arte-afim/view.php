@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\ArteAfim */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Arte Afims', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Arte afins', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="arte-afim-view">
