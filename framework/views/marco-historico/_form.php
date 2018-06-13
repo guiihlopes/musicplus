@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
-use yii\widgets\MaskedInput;
+use kartik\datecontrol\DateControl;
 use app\models\Pais;
 
 /* @var $this yii\web\View */
@@ -15,11 +15,12 @@ use app\models\Pais;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'data')->textInput()->widget(MaskedInput::className(), [
-        'clientOptions' => [
-            'alias' => 'date',
+    <?= $form->field($model, 'data')->widget(DateControl::className(),[
+        'pluginOptions' => [
+            'todayHighlight' => true
         ]
-    ]) ?>
+    ])
+    ?>
 
     <?= $form->field($model, 'descricao')->textarea(['rows' => 6]) ?>
 

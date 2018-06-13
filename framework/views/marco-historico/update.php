@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\MarcoHistorico */
 
-$this->title = 'Update Marco Historico: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Marco Historicos', 'url' => ['index']];
+$this->title = 'Atualizar marco histórico: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Marcos históricos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
