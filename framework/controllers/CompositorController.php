@@ -92,12 +92,12 @@ class CompositorController extends BaseController
             $file = UploadedFile::getInstance($model, 'imagem_principal');
             $fileName = $file->name;
             $extension = $file->getExtension();
-            $model->imagem_principal = 'uploads/' . md5($fileName + time()) . "." . $extension;
+            $model->imagem_principal = 'uploads/' . md5($fileName . time()) . "." . $extension;
             if ($model->validate()) {
                 $model->save();
                 $file->saveAs($model->imagem_principal);
             }
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -115,8 +115,16 @@ class CompositorController extends BaseController
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            $file = UploadedFile::getInstance($model, 'imagem_principal');
+            $fileName = $file->name;
+            $extension = $file->getExtension();
+            $model->imagem_principal = 'uploads/' . md5($fileName . time()) . "." . $extension;
+            if ($model->validate()) {
+                $model->save();
+                $file->saveAs($model->imagem_principal);
+            }
+            return $this->redirect(['index']);
         } else {
             return $this->render('update', [
                 'model' => $model,

@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
-use yii\widgets\MaskedInput;
+use kartik\datecontrol\DateControl;
 use app\models\Pais;
 use app\models\Genero;
 use app\models\Tonalidade;
@@ -31,11 +31,12 @@ use app\models\Compositor;
 
     <?= $form->field($model, 'texto_informativo')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'data_composicao')->textInput()->widget(MaskedInput::className(), [
-        'clientOptions' => [
-            'alias' => 'date',
+    <?= $form->field($model, 'data_composicao')->widget(DateControl::className(),[
+        'pluginOptions' => [
+            'todayHighlight' => true
         ]
-    ]) ?>
+    ])
+    ?>
 
     <?= $form->field($model, 'pais_id')->dropDownList(
         ArrayHelper::map(
@@ -67,7 +68,7 @@ use app\models\Compositor;
     <?= $form->field($model, 'composicao_url')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Cadastrar' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

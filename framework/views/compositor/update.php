@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Compositor */
 
-$this->title = 'Update Compositor: ' . $model->id;
+$this->title = 'Atualizar compositor: ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Compositors', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';

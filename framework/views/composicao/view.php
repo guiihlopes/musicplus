@@ -8,7 +8,7 @@ use yii\helpers\Url;
 /* @var $model app\models\Composicao */
 
 $this->title = $model->titulo_completo;
-$this->params['breadcrumbs'][] = ['label' => 'Composicaos', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Composições', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 

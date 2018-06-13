@@ -3,7 +3,8 @@
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
-use yii\widgets\MaskedInput;
+use kartik\file\FileInput;
+use kartik\datecontrol\DateControl;
 use app\models\Pais;
 use app\models\Epoca;
 
@@ -18,11 +19,12 @@ use app\models\Epoca;
 
     <?= $form->field($model, 'nome_completo')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'data_nascimento')->textInput()->widget(MaskedInput::className(), [
-        'clientOptions' => [
-            'alias' => 'date',
+    <?= $form->field($model, 'data_nascimento')->widget(DateControl::className(),[
+        'pluginOptions' => [
+            'todayHighlight' => true
         ]
-    ]) ?>
+    ])
+    ?>
 
     <?= $form->field($model, 'bio')->textarea(['rows' => 6]) ?>
 
@@ -40,20 +42,23 @@ use app\models\Epoca;
             'prompt' => ''
         ]) ?>
 
-    <?= $form->field($model, 'data_falecimento')->textInput()->widget(MaskedInput::className(), [
-        'clientOptions' => [
-            'alias' => 'date',
+    <?= $form->field($model, 'data_falecimento')->widget(DateControl::className(),[
+        'pluginOptions' => [
+            'todayHighlight' => true
         ]
-    ]) ?>
+    ])
+    ?>
 
     <?= $form->field($model, 'pais_falecimento_id')->dropDownList(
         ArrayHelper::map(
             Pais::find()->all(), 'id', 'nome'
         ), [
             'prompt' => ''
-        ]) ?>
+    ]) ?>
 
-    <?= $form->field($model, 'imagem_principal')->fileInput(['maxlength' => true]) ?>
+     <?= $form->field($model, 'imagem_principal')->widget(FileInput::classname(), [
+        'options' => ['accept' => 'image/*'],
+    ]); ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Cadastrar' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

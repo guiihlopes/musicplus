@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Composicao */
 
-$this->title = 'Cadastrar Composição';
-$this->params['breadcrumbs'][] = ['label' => 'Composicaos', 'url' => ['index']];
+$this->title = 'Cadastrar composição';
+$this->params['breadcrumbs'][] = ['label' => 'Composições', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="composicao-create">

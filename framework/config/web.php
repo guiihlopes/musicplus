@@ -3,16 +3,49 @@
 $params = require(__DIR__ . '/params.php');
 $db = require(__DIR__ . '/db.php');
 
+use kartik\datecontrol\Module;
+
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'modules' => [
+        'datecontrol' =>  [
+            'class' => 'kartik\datecontrol\Module',
+     
+            // format settings for displaying each date attribute (ICU format example)
+            'displaySettings' => [
+                Module::FORMAT_DATE => 'php:d/m/Y',
+                Module::FORMAT_TIME => 'hh:mm:ss a',
+                Module::FORMAT_DATETIME => 'php:d/m/Y hh:mm:ss a', 
+            ],
+            
+            // format settings for saving each date attribute (PHP format example)
+            'saveSettings' => [
+                Module::FORMAT_DATE => 'php:Y-m-d',
+                Module::FORMAT_TIME => 'php:H:i:s',
+                Module::FORMAT_DATETIME => 'php:Y-m-d H:i:s',
+            ],
+     
+            // set your display timezone
+            'displayTimezone' => 'America/Sao_Paulo',
+            
+            // automatically use kartik\widgets for each of the above formats
+            'autoWidget' => true,
+        ]
+    ],
     'language' => 'pt-BR',
     'sourceLanguage' => 'pt-BR',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'c7ToxFxX21iDoVhVB1pKcfTIybWze35l',
+        ],
+        'formatter' => [
+            'class' => 'yii\i18n\Formatter',
+            'dateFormat' => 'php:d/m/Y',
+            'datetimeFormat' => 'php:d/m/Y H:i:s',
+            'timeFormat' => 'php:H:i:s',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
