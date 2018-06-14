@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Tonalidade */
 
-$this->title = 'Update Tonalidade: ' . $model->id;
+$this->title = 'Atualizar Tonalidade: ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Tonalidades', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';

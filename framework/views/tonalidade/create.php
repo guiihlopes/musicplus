@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Tonalidade */
 
-$this->title = 'Create Tonalidade';
+$this->title = 'Cadastrar Tonalidade';
 $this->params['breadcrumbs'][] = ['label' => 'Tonalidades', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

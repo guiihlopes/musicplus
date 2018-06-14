@@ -28,10 +28,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'descricao',
             [
-                'label' => 'Imagem',
-                'format' => 'html',
-                'value' => function ($data) {
-                    return '<img class="thumb-lg" src="'. Url::toRoute($data['url']) .'" />';
+                'attribute' => 'url',
+                'format' => 'image',
+                'value' => function($data) {
+                    return Url::toRoute($data->url);
                 }
             ],
 

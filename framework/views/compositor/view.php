@@ -8,7 +8,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Compositor */
 
 $this->title = $model->nome_completo;
-$this->params['breadcrumbs'][] = ['label' => 'Compositors', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Compositores', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <section class="w-f-md">

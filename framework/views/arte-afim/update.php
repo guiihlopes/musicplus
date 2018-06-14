@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\ArteAfim */
 
 $this->title = 'Atualizar arte afim: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Arte afins', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Artes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

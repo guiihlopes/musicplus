@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\models\MarcoHistorico */
 
 $this->title = 'Cadastrar marco histórico';
-$this->params['breadcrumbs'][] = ['label' => 'Marco históricos', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Marcos históricos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="marco-historico-create">

@@ -132,6 +132,10 @@ class CompositorController extends BaseController
         }
     }
 
+    public function actionView($id) {
+        return $this->redirect(['index']);
+    }
+
     public function actionFavorito($id)
     {
         Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;

@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Epoca */
 
-$this->title = 'Update Epoca: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Epocas', 'url' => ['index']];
+$this->title = 'Atualizar Época: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Épocas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Atualizar';
 ?>
 <div class="epoca-update">
 

@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Compositor */
 
 $this->title = 'Cadastrar Compositor';
-$this->params['breadcrumbs'][] = ['label' => 'Compositors', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Compositores', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="compositor-create">
