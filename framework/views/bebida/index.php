@@ -34,7 +34,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'safra',
             // 'tipo',
             // 'uva',
-            'pais.nome',
+            [
+                'attribute' => 'pais.nome',
+                'label' => 'País'
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
