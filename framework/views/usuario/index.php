@@ -29,7 +29,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'nome',
             'sobrenome',
             'email:email',
-            'senha',
+            [
+                'attribute' => 'senha',
+                'value' => function($data) {
+                    return '******';
+                }
+            ],
             // 'data_nascimento',
             // 'perfil_id',
             // 'genero',
