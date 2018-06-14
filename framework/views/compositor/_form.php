@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 use kartik\file\FileInput;
@@ -55,6 +56,15 @@ use app\models\Epoca;
         ), [
             'prompt' => ''
     ]) ?>
+
+    <?php if (!$model->isNewRecord): ?>
+        <div>
+            <label>Imagem atual</label>
+            <figure>
+                <?= Html::img(Url::toRoute($model->imagem_principal)) ?>
+            </figure>
+        </div>
+    <?php endif; ?>
 
      <?= $form->field($model, 'imagem_principal')->widget(FileInput::classname(), [
         'options' => ['accept' => 'image/*'],
