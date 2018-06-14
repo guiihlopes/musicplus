@@ -5,7 +5,7 @@ use app\models\Perfil;
 use app\models\Genero;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
-use yii\widgets\MaskedInput;
+use kartik\datecontrol\DateControl;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Usuario */
@@ -24,11 +24,12 @@ use yii\widgets\MaskedInput;
 
     <?= $form->field($model, 'senha')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'data_nascimento')->textInput()->widget(MaskedInput::className(), [
-        'clientOptions' => [
-            'alias' => 'date',
+    <?= $form->field($model, 'data_nascimento')->widget(DateControl::className(),[
+        'pluginOptions' => [
+            'todayHighlight' => true
         ]
-    ]) ?>
+    ])
+    ?>
 
     <?= $form->field($model, 'perfil_id')->dropDownList(ArrayHelper::map(Perfil::find()->all(), 'id', 'descricao'), [
         'prompt' => ''
