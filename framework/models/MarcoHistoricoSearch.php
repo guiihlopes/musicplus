@@ -12,6 +12,8 @@ use app\models\MarcoHistorico;
  */
 class MarcoHistoricoSearch extends MarcoHistorico
 {
+
+    public $pais;
     /**
      * @inheritdoc
      */
@@ -19,7 +21,7 @@ class MarcoHistoricoSearch extends MarcoHistorico
     {
         return [
             [['id', 'pais_id'], 'integer'],
-            [['data', 'descricao'], 'safe'],
+            [['data', 'descricao', 'pais'], 'safe'],
         ];
     }
 
@@ -43,11 +45,18 @@ class MarcoHistoricoSearch extends MarcoHistorico
     {
         $query = MarcoHistorico::find();
 
+        $query->joinWith(['pais']);
+
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
+
+        $dataProvider->sort->attributes['pais'] = [
+            'asc' => ['pais.nome' => SORT_ASC],
+            'desc' => ['pais.nome' => SORT_DESC],
+        ];
 
         $this->load($params);
 
@@ -64,7 +73,8 @@ class MarcoHistoricoSearch extends MarcoHistorico
             'pais_id' => $this->pais_id,
         ]);
 
-        $query->andFilterWhere(['like', 'descricao', $this->descricao]);
+        $query->andFilterWhere(['like', 'descricao', $this->descricao])
+              ->andFilterWhere(['like', 'pais.nome', $this->pais]);
 
         return $dataProvider;
     }

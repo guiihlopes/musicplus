@@ -29,7 +29,10 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'id',
             // 'data',
             'descricao:ntext',
-            'pais.nome',
+            [
+                'attribute' => 'pais',
+                'value' => 'pais.nome'
+            ],
 
             [
                 'label' => 'Adicionar imagens',
