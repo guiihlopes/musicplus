@@ -4,6 +4,16 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\DetailView;
 
+$style= <<< CSS
+    .vbox footer {
+        display: none;
+	}
+	.vbox > section.w-f-md {
+		bottom: 0px;
+	}
+CSS;
+$this->registerCss($style);
+
 /* @var $this yii\web\View */
 /* @var $model app\models\Compositor */
 

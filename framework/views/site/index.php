@@ -4,6 +4,12 @@
 use yii\widgets\ListView;
 
 $this->title = 'Music +';
+$style= <<< CSS
+    .vbox footer {
+        display: none;
+    }
+CSS;
+$this->registerCss($style);
 ?>
 <section class="scrollable padder-lg w-f-md" id="bjax-target">
     <a href="#" class="pull-right text-muted m-t-lg" data-toggle="class:fa-spin"><i class="icon-refresh i-lg  inline" id="refresh"></i></a>
