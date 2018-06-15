@@ -6,7 +6,11 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\bootstrap\Nav;
+use yii\widgets\ActiveForm;
 use app\assets\AppAsset;
+use app\models\CompositorSearch;
+
+$searchModel = new CompositorSearch();
 
 AppAsset::register($this);
 $this->registerJsFile(
@@ -18,12 +22,7 @@ $userMenu = function ($className = null, $arrowClass = null) {
         'options' => ['class' => 'dropdown-menu animated fadeInRight' . ($className !== null ? ' ' . $className : '')],
         'encodeLabels' => false,
         'items' => [
-            ['label' => '<span class="'.($arrowClass === null ? "arrow top" : $arrowClass).'"></span>Settings', 'url' => ['/site/batata']],
-            ['label' => 'Profile', 'url' => ['/site/batata']],
-            ['label' => '<span class="badge bg-danger pull-right">3</span>
-            Notifications', 'url' => ['/site/batata']],
-            ['label' => 'Help', 'url' => ['/site/batata']],
-            '<li class="divider"></li>',
+            ['label' => '<span class="'.($arrowClass === null ? "arrow top" : $arrowClass).'"></span>Settings', 'url' => ['/usuario/update', 'id' => Yii::$app->user->identity->id]],
             (
                 '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
@@ -76,16 +75,22 @@ $userMenu = function ($className = null, $arrowClass = null) {
           </a>
         </li>
       </ul>
-      <form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search">
+      <?php $form = ActiveForm::begin([
+          'action' => ['/site/search'],
+          'options' => [
+            'class' => 'navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs'
+          ],
+          'method' => 'get',
+      ]); ?>
         <div class="form-group">
           <div class="input-group">
             <span class="input-group-btn">
-              <button type="submit" class="btn btn-sm bg-white btn-icon rounded"><i class="fa fa-search"></i></button>
+              <?= Html::submitButton('<i class="fa fa-search"></i>', ['class' => 'btn btn-sm bg-white btn-icon rounded']) ?>
             </span>
-            <input type="text" class="form-control input-sm no-border rounded" placeholder="Search songs, albums...">
+              <?= $form->field($searchModel, 'nome_completo')->textInput(['class' => 'form-control input-sm no-border rounded', 'placeholder' => 'Busque compositor...'])->label(false) ?>
           </div>
         </div>
-      </form>
+      <?php ActiveForm::end(); ?>
       <div class="navbar-right ">
         <ul class="nav navbar-nav m-n hidden-xs nav-user user">
           <li class="dropdown">
@@ -141,11 +146,6 @@ $userMenu = function ($className = null, $arrowClass = null) {
                               <b class="badge bg-primary pull-right">6</b>
                               <span class="font-bold">Épocas favoritas</span>',
                             'url' => ['/epocas/favorita']
-                          ],
-                          [
-                            'label' => '<i class="icon-social-youtube icon  text-primary"></i>
-                              <span class="font-bold">Video</span>',
-                            'url' => ['/site/batata']
                           ],
                           '<li class="m-b hidden-nav-xs"></li>'
                         ],

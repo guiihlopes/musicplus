@@ -30,20 +30,24 @@ use kartik\datecontrol\DateControl;
         ]
     ])
     ?>
-
-    <?= $form->field($model, 'perfil_id')->dropDownList(ArrayHelper::map(Perfil::find()->all(), 'id', 'descricao'), [
-        'prompt' => ''
-    ]) ?>
+    <?php if (Yii::$app->user->identity->perfil_id == 1): ?>
+        <?= $form->field($model, 'perfil_id')->dropDownList(ArrayHelper::map(Perfil::find()->all(), 'id', 'descricao'), [
+            'prompt' => ''
+        ]) ?>
+    <?php endif; ?>
+    
 
     <?= $form->field($model, 'genero')->radioList([
         0 => 'Masculino',
         1 => 'Feminino',
     ]) ?>
 
-    <?= $form->field($model, 'status')->radioList([
-        0 => 'Inativo',
-        1 => 'Ativo',
-    ]) ?>
+    <?php if (Yii::$app->user->identity->perfil_id == 1): ?>
+        <?= $form->field($model, 'status')->radioList([
+            0 => 'Inativo',
+            1 => 'Ativo',
+        ]) ?>
+    <?php endif; ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Cadastrar' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

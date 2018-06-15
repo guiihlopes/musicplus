@@ -2823,6 +2823,16 @@ a.bg-light:focus {
 }
 .pos-rlt {
   position: relative;
+  height: 150px;
+  overflow: hidden;
+}
+.pos-rlt a {
+  height: 100%;
+}
+.pos-rlt a img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 .pos-stc {
   position: static;
@@ -3536,6 +3546,7 @@ fieldset[disabled] .i-checks input + i:before {
   right: 0;
   bottom: 0;
   left: 0;
+  height: 100%;
 }
 .item-overlay.active,
 .item:hover .item-overlay {

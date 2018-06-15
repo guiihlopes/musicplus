@@ -6,6 +6,7 @@ use Yii;
 use yii\filters\AccessControl;
 use app\models\Usuario;
 use app\models\Compositor;
+use app\models\CompositorSearch;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\Response;
@@ -68,9 +69,20 @@ class SiteController extends BaseController
         ]);
 
         return $this->render('index', [
+            'dataProvider' => $dataProvider
+        ]);
+    }
+
+    public function actionSearch()
+    {
+        $searchModel = new CompositorSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
             'dataProvider' => $dataProvider,
         ]);
     }
+
     public function actionSignup()
     {
         if (!Yii::$app->user->isGuest) {

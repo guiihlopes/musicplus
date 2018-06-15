@@ -33,6 +33,14 @@ class UsuarioController extends BaseController
                             return (Yii::$app->user->identity !== null && Yii::$app->user->identity->perfil_id === 1);
                         }
                     ],
+                    [
+                        'actions' => ['update'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                        'matchCallback' => function ($rule, $action) {
+                            return (Yii::$app->user->identity !== null && Yii::$app->user->identity->id == Yii::$app->getRequest()->getQueryParam('id'));
+                        }
+                    ],
                 ],
             ],
             'verbs' => [
@@ -101,7 +109,11 @@ class UsuarioController extends BaseController
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            if (Yii::$app->user->identity !== null && Yii::$app->user->identity->id == Yii::$app->getRequest()->getQueryParam('id')){
+                return $this->redirect(['site/index']);
+            }else {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         } else {
             return $this->render('update', [
                 'model' => $model,
