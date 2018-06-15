@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * MarcoHistoricoImagemController implements the CRUD actions for MarcoHistoricoImagem model.
  */
-class MarcoHistoricoImagemController extends Controller
+class MarcoHistoricoImagemController extends BaseController
 {
     /**
      * @inheritdoc

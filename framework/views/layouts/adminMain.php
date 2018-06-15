@@ -35,17 +35,52 @@ AppAsset::register($this);
         ],
     ]);
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
+        'options' => ['class' => 'nav navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Usuarios', 'url' => ['/usuario/index']],
-            ['label' => 'Compositores', 'url' => ['/compositor/index']],
-            ['label' => 'Composições', 'url' => ['/composicao/index']],
+            [
+                'label' => 'Compositores',
+                'items' => [
+                     ['label' => 'Gerenciar', 'url' => ['/compositor/index']],
+                     '<li class="divider"></li>',
+                     ['label' => 'Imagens', 'url' => ['compositor-imagem/index']],
+                ],
+            ],
+            [
+                'label' => 'Composições',
+                'items' => [
+                     ['label' => 'Gerenciar', 'url' => ['/composicao/index']],
+                     '<li class="divider"></li>',
+                     ['label' => 'Imagens', 'url' => ['composicao-imagem/index']],
+                ],
+            ],
             ['label' => 'Épocas', 'url' => ['/epoca/index']],
-            ['label' => 'Bebidas', 'url' => ['/bebida/index']],
+            [
+                'label' => 'Bebidas',
+                'items' => [
+                     ['label' => 'Gerenciar', 'url' => ['/bebida/index']],
+                     '<li class="divider"></li>',
+                     ['label' => 'Imagens', 'url' => ['bebida-imagem/index']],
+                ],
+            ],
             ['label' => 'Tonalidades', 'url' => ['/tonalidade/index']],
             ['label' => 'Gêneros', 'url' => ['/genero/index']],
-            ['label' => 'Acontecimentos', 'url' => ['/marco-historico/index']],
-            ['label' => 'Arte', 'url' => ['/arte-afim/index']],
+            [
+                'label' => 'Acontecimentos',
+                'items' => [
+                     ['label' => 'Gerenciar', 'url' => ['/marco-historico/index']],
+                     '<li class="divider"></li>',
+                     ['label' => 'Imagens', 'url' => ['marco-historico-imagem/index']],
+                ],
+            ],
+            [
+                'label' => 'Arte',
+                'items' => [
+                     ['label' => 'Gerenciar', 'url' => ['/arte-afim/index']],
+                     '<li class="divider"></li>',
+                     ['label' => 'Imagens', 'url' => ['arte-afim-imagem/index']],
+                ],
+            ],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (

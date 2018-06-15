@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * EpocaImagemController implements the CRUD actions for EpocaImagem model.
  */
-class EpocaImagemController extends Controller
+class EpocaImagemController extends BaseController
 {
     /**
      * @inheritdoc

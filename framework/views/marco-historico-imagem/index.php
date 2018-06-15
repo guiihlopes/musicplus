@@ -24,8 +24,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'marco_historico_id',
-            'imagem_id',
+            'marcoHistorico.descricao',
+            [
+                'attribute' => 'imagem_id',
+                'format' => 'html',
+                'value' => function ($data) {
+                    return '<img class="thumb-lg" src="'. Yii::$app->imagemanager->getImagePath($data->imagem_id) .'" />';
+                }
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

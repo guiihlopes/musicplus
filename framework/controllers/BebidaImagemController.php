@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * BebidaImagemController implements the CRUD actions for BebidaImagem model.
  */
-class BebidaImagemController extends Controller
+class BebidaImagemController extends BaseController
 {
     /**
      * @inheritdoc
