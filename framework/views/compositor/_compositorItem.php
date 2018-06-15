@@ -42,7 +42,7 @@ JS;
               <?php } ?>
           </div>
           <a href="#">
-              <img src="<?= $model->imagem_principal ? Url::toRoute(Yii::$app->imagemanager->getImagePath($model->imagem_principal)) : Url::toRoute('images/p9.jpg')?>" alt="" class="r r-2x img-full">
+              <img src="<?= $model->imagem_principal && Yii::$app->imagemanager->getImagePath($model->imagem_principal) ? Url::toRoute(Yii::$app->imagemanager->getImagePath($model->imagem_principal)) : Url::toRoute('images/p9.jpg')?>" alt="" class="r r-2x img-full">
           </a>
       </div>
       <div class="padder-v">
