@@ -30,7 +30,10 @@ $this->params['breadcrumbs'][] = $this->title;
 							<span class="pull-right text-sm"><?= $model->epoca->descricao ?> <br>Época</span>
 							<span class="h2 font-thin"><?= $model->nome_completo ?></span>
 						</div>
-						<img class="img-full" src="<?= Url::toRoute(Yii::$app->imagemanager->getImagePath($model->imagem_principal)) ?>" alt="...">
+						<?php 
+							$img = Yii::$app->imagemanager->getImagePath($model->imagem_principal);
+						?>
+						<img class="img-full" src="<?= $img ? Url::toRoute($img) : Url::toRoute('images/m18.jpg') ?>" alt="...">
 					</div>
 					<div class="container">
 						<h2>Biografia</h2>
