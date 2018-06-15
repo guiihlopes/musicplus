@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 
@@ -29,6 +30,13 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'data',
             'descricao:ntext',
             'autor',
+            [
+                'label' => 'Adicionar imagens',
+                'format' => 'html',
+                'value' => function($data) {
+                    return Html::a('Adicionar', Url::toRoute(['arte-afim-imagem/create', 'arte_afim_id' => $data->id]), ['class' => 'btn btn-xs btn-success']);
+                }
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

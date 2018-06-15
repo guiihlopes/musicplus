@@ -46,7 +46,6 @@ AppAsset::register($this);
             ['label' => 'Gêneros', 'url' => ['/genero/index']],
             ['label' => 'Acontecimentos', 'url' => ['/marco-historico/index']],
             ['label' => 'Arte', 'url' => ['/arte-afim/index']],
-            ['label' => 'Imagens', 'url' => ['/imagem/index']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (

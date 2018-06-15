@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 
@@ -29,6 +30,14 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'data',
             'descricao:ntext',
             'pais.nome',
+
+            [
+                'label' => 'Adicionar imagens',
+                'format' => 'html',
+                'value' => function($data) {
+                    return Html::a('Adicionar', Url::toRoute(['marco-historico-imagem/create', 'marco_historico_id' => $data->id]), ['class' => 'btn btn-xs btn-success']);
+                }
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

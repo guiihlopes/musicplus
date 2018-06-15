@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jun 11, 2018 at 10:15 PM
--- Server version: 10.1.25-MariaDB
--- PHP Version: 7.1.7
+-- Host: 127.0.0.1
+-- Generation Time: 15-Jun-2018 às 02:47
+-- Versão do servidor: 10.1.32-MariaDB
+-- PHP Version: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `arte_afim`
+-- Estrutura da tabela `arte_afim`
 --
 
 CREATE TABLE `arte_afim` (
@@ -36,17 +36,19 @@ CREATE TABLE `arte_afim` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `arte_afim`
+-- Extraindo dados da tabela `arte_afim`
 --
 
 INSERT INTO `arte_afim` (`id`, `data`, `descricao`, `autor`) VALUES
-(1, '0000-00-00', 'Lorem ipsum 1234', 'Autor 1234'),
-(2, '0000-00-00', 'Atque nihil est in at magni ut nemo nisi quibusdam consectetur ut laudantium', 'Iste aute hic omnis in aut adipisci fugiat blanditiis et');
+(1, '2017-02-07', 'Lorem ipsum 1234', 'Autor 1234'),
+(2, '0000-00-00', 'Atque nihil est in at magni ut nemo nisi quibusdam consectetur ut laudantium', 'Iste aute hic omnis in aut adipisci fugiat blanditiis et'),
+(3, '0000-00-00', 'Lorem Ipsum bla bla bla', 'Testando Arte'),
+(4, '2018-06-04', 'Et dolore et consequat Aut obcaecati dolorem ea cupidatat quod molestias voluptatem explicabo', 'Laborum no');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `arte_afim_imagem`
+-- Estrutura da tabela `arte_afim_imagem`
 --
 
 CREATE TABLE `arte_afim_imagem` (
@@ -54,10 +56,17 @@ CREATE TABLE `arte_afim_imagem` (
   `imagem_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `arte_afim_imagem`
+--
+
+INSERT INTO `arte_afim_imagem` (`arte_id`, `imagem_id`) VALUES
+(1, 4);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bebida`
+-- Estrutura da tabela `bebida`
 --
 
 CREATE TABLE `bebida` (
@@ -74,17 +83,18 @@ CREATE TABLE `bebida` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `bebida`
+-- Extraindo dados da tabela `bebida`
 --
 
 INSERT INTO `bebida` (`id`, `nome`, `data`, `teor_alcoolico`, `amadurecimento`, `descricao`, `safra`, `tipo`, `uva`, `pais_id`) VALUES
-(1, 'vinho tinto', '0000-00-00', 50, 'Consectetur natus ipsam do porro quo accusantium eos aute autem ipsum et earum unde nihil sit', 'Aliquip aut magni aut beatae consequuntur in aliqua Itaque ad', 'Sunt pariatur Suscipit qui repudiandae laudantium rerum ea', 'Adipisicing est nostrud ex aliqua Quia in Nam aut magnam natus minim voluptatem tempora non', 'Lorem architecto tempor ea aut numquam et molestiae molestiae est cupidatat duis odit', 46),
-(2, 'Sunt perferendis elit aut fugit quisquam in officia impedit amet do repudiandae ut consequatur i', '0000-00-00', 50, 'Dolore nulla non duis magnam et optio laboriosam excepturi', 'Nostrum et placeat minus dignissimos tempora odit voluptatem eveniet ad id vel cum unde veritatis', 'Eum totam labore ut beatae obcaecati quaerat deleniti doloribus in molestiae rerum enim eos unde et dolorem', 'Quia dolores amet placeat tempore culpa facere qui rerum esse tempora hic suscipit voluptate culpa aut explicabo Aut voluptatem', 'Tenetur itaque rerum dolore itaque Nam quia nulla quisquam quas dolore velit facilis ipsam recusandae Animi nulla', 74);
+(1, 'vinho tinto', '2017-05-00', 50, 'Consectetur natus ipsam do porro quo accusantium eos aute autem ipsum et earum unde nihil sit', 'Aliquip aut magni aut beatae consequuntur in aliqua Itaque ad', 'Sunt pariatur Suscipit qui repudiandae laudantium rerum ea', 'Adipisicing est nostrud ex aliqua Quia in Nam aut magnam natus minim voluptatem tempora non', 'Lorem architecto tempor ea aut numquam et molestiae molestiae est cupidatat duis odit', 46),
+(2, 'Sunt perferendis elit aut fugit quisquam in officia impedit amet do repudiandae ut consequatur i', '0000-00-00', 50, 'Dolore nulla non duis magnam et optio laboriosam excepturi', 'Nostrum et placeat minus dignissimos tempora odit voluptatem eveniet ad id vel cum unde veritatis', 'Eum totam labore ut beatae obcaecati quaerat deleniti doloribus in molestiae rerum enim eos unde et dolorem', 'Quia dolores amet placeat tempore culpa facere qui rerum esse tempora hic suscipit voluptate culpa aut explicabo Aut voluptatem', 'Tenetur itaque rerum dolore itaque Nam quia nulla quisquam quas dolore velit facilis ipsam recusandae Animi nulla', 6),
+(3, 'Deserunt aut', '2018-06-12', 4, 'Tempora nemo exercitation non sed qui molestias duis pariatur Architecto voluptas voluptas id', 'Iste et necessitatibus incididunt sed dolores ea maiores qui aliquip molestiae irure non asperiores dolor', 'Ut rerum aliquid ut consequatur dolor tempora ipsa et nihil beatae molestias impedit voluptatum', 'Sed eos sed aliquid aperiam', 'Nobis perferendis aut commodo excepturi ut nemo lorem ut veritatis quos laboriosam', 142);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bebida_imagem`
+-- Estrutura da tabela `bebida_imagem`
 --
 
 CREATE TABLE `bebida_imagem` (
@@ -92,10 +102,17 @@ CREATE TABLE `bebida_imagem` (
   `imagem_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `bebida_imagem`
+--
+
+INSERT INTO `bebida_imagem` (`bebida_id`, `imagem_id`) VALUES
+(1, 8);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `composicao`
+-- Estrutura da tabela `composicao`
 --
 
 CREATE TABLE `composicao` (
@@ -112,7 +129,7 @@ CREATE TABLE `composicao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `composicao`
+-- Extraindo dados da tabela `composicao`
 --
 
 INSERT INTO `composicao` (`id`, `titulo_completo`, `texto_informativo`, `data_composicao`, `pais_id`, `genero_id`, `tonalidade_id`, `partitura_url`, `composicao_url`, `compositor_id`) VALUES
@@ -120,12 +137,14 @@ INSERT INTO `composicao` (`id`, `titulo_completo`, `texto_informativo`, `data_co
 (3, 'teste', 'fhgviudjsokrneihuviejowkpfk new uifojekow fijewb fuejwik ewb fejwkofpewifuhiewfjikw efnwehnfj iekwofewpkijfouhiewfjoeikwofpew bfweyhufjiekwopfiejwouibgwyfhijewikpo fewhfiwufjoekpw', '2017-11-01', 21, 4, 2, 'images/p1.jpg', 'http://flatfull.com/themes/assets/musics/Miaow-07-Bubble.mp3', 3),
 (4, 'Musica de teste', 'lorem ipsum dolor sit amet consectur', '0000-00-00', 2, 3, 1, NULL, 'https://dragon-g3.sscdn.co/palcomp3/0/e/a/3/brunofelix_voodookings-faixa-9-859bb4.mp3', 3),
 (5, 'Aliquam et eligendi iure id voluptate ipsa quos asperiores impedit iusto eos sint excepturi Nam cillum repudiandae in', 'Quam rem ea omnis tempor velit tempora non delectus ullam corporis ipsa excepturi est aperiam qui maxime', '0000-00-00', 121, 8, 2, NULL, 'https://pegasus-g4.sscdn.co/palcomp3/2/b/5/8/brunofelix_voodookings-bruno-felix-thursday-in-blues-d47223.mp3', 3),
-(6, 'Apresentacao', 'fhdsjfkdsfsd', '0000-00-00', 6, 4, 3, NULL, 'https://pegasus-g4.sscdn.co/palcomp3/2/b/5/8/brunofelix_voodookings-bruno-felix-thursday-in-blues-d47223.mp3', 5);
+(6, 'Apresentacao', 'fhdsjfkdsfsd', '2017-05-03', 6, 4, 3, 'images/p1.jpg', 'https://pegasus-g4.sscdn.co/palcomp3/2/b/5/8/brunofelix_voodookings-bruno-felix-thursday-in-blues-d47223.mp3', 5),
+(7, 'Adipisicing in obcaecati', 'Quis quasi officia incididunt autem aut deserunt obcaecati laborum eveniet amet tempore pariatur Molestiae hic', '2018-06-20', 209, 4, 2, '3', 'dsadasdsa', 7),
+(8, 'Maxime quis aperiam consequatur Possimus quos voluptatibus corporis elit corrupti', 'Dolor similique cupidatat aut enim excepteur nihil aut minima sed ipsa', '2018-06-07', 16, 5, 1, '4', 'Ipsa consequatur ut ratione cupiditate quisquam ad voluptate sint odio nemo quo veritatis eos dolore at libero dignissimos', 7);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `composicao_imagem`
+-- Estrutura da tabela `composicao_imagem`
 --
 
 CREATE TABLE `composicao_imagem` (
@@ -133,10 +152,19 @@ CREATE TABLE `composicao_imagem` (
   `imagem_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `composicao_imagem`
+--
+
+INSERT INTO `composicao_imagem` (`obra_id`, `imagem_id`) VALUES
+(2, 3),
+(2, 6),
+(8, 3);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `composicao_usuario`
+-- Estrutura da tabela `composicao_usuario`
 --
 
 CREATE TABLE `composicao_usuario` (
@@ -147,7 +175,7 @@ CREATE TABLE `composicao_usuario` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `compositor`
+-- Estrutura da tabela `compositor`
 --
 
 CREATE TABLE `compositor` (
@@ -163,19 +191,22 @@ CREATE TABLE `compositor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `compositor`
+-- Extraindo dados da tabela `compositor`
 --
 
 INSERT INTO `compositor` (`id`, `nome_completo`, `data_nascimento`, `bio`, `epoca_id`, `pais_nascimento_id`, `data_falecimento`, `pais_falecimento_id`, `imagem_principal`) VALUES
-(2, 'Compositor 2', '0000-00-00', 'Lorem ipsum', 2, 46, NULL, NULL, 'uploads/f652d7cbda0a63cdc9504d347da7058d.png'),
-(3, 'Compositor 3', '0000-00-00', 'Lorem ipsum', 3, 4, NULL, NULL, 'uploads/734a2b9d7929280331ee9432141fcb5c.png'),
-(4, 'Compositor 4', '0000-00-00', 'Non doloribus natus do rerum consequatur', 7, 62, NULL, 129, 'uploads/734a2b9d7929280331ee9432141fcb5c.png'),
-(5, 'Compositor 5', '0000-00-00', 'kfdskfdks', 5, 5, NULL, NULL, 'uploads/f652d7cbda0a63cdc9504d347da7058d.png');
+(2, 'Compositor 2', '0000-00-00', 'Lorem ipsum', 2, 46, NULL, NULL, '7'),
+(3, 'Compositor 3', '0000-00-00', 'Lorem ipsum', 3, 4, NULL, NULL, '7'),
+(4, 'Compositor 4', '0000-00-00', 'Non doloribus natus do rerum consequatur', 7, 62, NULL, 129, '7'),
+(5, 'Compositor 5', '0000-00-00', 'kfdskfdks', 5, 5, NULL, NULL, '3'),
+(6, 'Sint in dignissimos ea sed illum eu repellendus Molestiae totam explicabo Minim dignissimos quis veniam nemo voluptates laboris natus', '2018-06-06', 'Ut inventore placeat soluta dolor deserunt pariatur Doloribus dolore elit qui ratione sed minim minus incidunt', 7, 5, '2018-06-13', 144, '9'),
+(7, 'Tempor ', '2018-06-06', 'Corporis quo veniam voluptate et sit sed voluptatem vel tempora cupidatat', 3, 218, '2018-06-13', 214, '9'),
+(8, 'Voluptatum', '2018-06-06', 'Nobis sunt aliquip earum quia soluta molestiae modi', 1, 142, '2018-06-13', 186, '4');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `compositor_imagem`
+-- Estrutura da tabela `compositor_imagem`
 --
 
 CREATE TABLE `compositor_imagem` (
@@ -183,10 +214,17 @@ CREATE TABLE `compositor_imagem` (
   `imagem_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `compositor_imagem`
+--
+
+INSERT INTO `compositor_imagem` (`compositor_id`, `imagem_id`) VALUES
+(2, 4);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `compositor_usuario`
+-- Estrutura da tabela `compositor_usuario`
 --
 
 CREATE TABLE `compositor_usuario` (
@@ -195,7 +233,7 @@ CREATE TABLE `compositor_usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `compositor_usuario`
+-- Extraindo dados da tabela `compositor_usuario`
 --
 
 INSERT INTO `compositor_usuario` (`compositor_id`, `usuario_id`) VALUES
@@ -205,7 +243,7 @@ INSERT INTO `compositor_usuario` (`compositor_id`, `usuario_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `epoca`
+-- Estrutura da tabela `epoca`
 --
 
 CREATE TABLE `epoca` (
@@ -214,7 +252,7 @@ CREATE TABLE `epoca` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `epoca`
+-- Extraindo dados da tabela `epoca`
 --
 
 INSERT INTO `epoca` (`id`, `descricao`) VALUES
@@ -230,7 +268,7 @@ INSERT INTO `epoca` (`id`, `descricao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `epoca_imagem`
+-- Estrutura da tabela `epoca_imagem`
 --
 
 CREATE TABLE `epoca_imagem` (
@@ -241,7 +279,7 @@ CREATE TABLE `epoca_imagem` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `epoca_usuario`
+-- Estrutura da tabela `epoca_usuario`
 --
 
 CREATE TABLE `epoca_usuario` (
@@ -252,7 +290,7 @@ CREATE TABLE `epoca_usuario` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `genero`
+-- Estrutura da tabela `genero`
 --
 
 CREATE TABLE `genero` (
@@ -261,7 +299,7 @@ CREATE TABLE `genero` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `genero`
+-- Extraindo dados da tabela `genero`
 --
 
 INSERT INTO `genero` (`id`, `descricao`) VALUES
@@ -277,19 +315,35 @@ INSERT INTO `genero` (`id`, `descricao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `imagem`
+-- Estrutura da tabela `imagemanager`
 --
 
-CREATE TABLE `imagem` (
-  `id` int(11) NOT NULL,
-  `descricao` varchar(155) NOT NULL,
-  `url` varchar(255) NOT NULL
+CREATE TABLE `imagemanager` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `fileName` varchar(128) NOT NULL,
+  `fileHash` varchar(32) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  `createdBy` int(10) UNSIGNED DEFAULT NULL,
+  `modifiedBy` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `imagemanager`
+--
+
+INSERT INTO `imagemanager` (`id`, `fileName`, `fileHash`, `created`, `modified`, `createdBy`, `modifiedBy`) VALUES
+(3, 'm11.jpg', 'TGeCCoQvx7uS7VOQtD35E6yYfyrW87US', '2018-06-14 19:33:30', '2018-06-14 19:33:30', NULL, NULL),
+(4, 'a7.png', 'GwH8RqAIEVJYnwItAaAYYBuIzBzGqxa5', '2018-06-14 19:36:24', '2018-06-14 19:36:24', NULL, NULL),
+(6, 'p7.jpg', 'Pc-NgIu4SeeGE343SlSfeuiphiYjGCLL', '2018-06-14 20:13:38', '2018-06-14 20:13:38', NULL, NULL),
+(7, 'p6.jpg', 'ssBZnFqUi1v2FhRV3t8Thd_0cRAfuNkg', '2018-06-14 20:13:50', '2018-06-14 20:13:50', NULL, NULL),
+(8, 'm17.jpg', 'mN5Z9aL1x5Fa7eghDRk8rwWmSa69YMhu', '2018-06-14 21:27:30', '2018-06-14 21:27:30', NULL, NULL),
+(9, 'p10.jpg', 'p44fPlbrhXomdYAUrlPMx1_GnJzbukaS', '2018-06-14 21:34:08', '2018-06-14 21:34:08', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `marco_historico`
+-- Estrutura da tabela `marco_historico`
 --
 
 CREATE TABLE `marco_historico` (
@@ -300,16 +354,19 @@ CREATE TABLE `marco_historico` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `marco_historico`
+-- Extraindo dados da tabela `marco_historico`
 --
 
 INSERT INTO `marco_historico` (`id`, `data`, `descricao`, `pais_id`) VALUES
-(1, '0000-00-00', 'Marco histórico 123456', 16);
+(1, '1991-02-27', 'Marco histórico 123456', 16),
+(2, '0000-00-00', 'Teste lorem ipsum dolor sit amet', 6),
+(3, '0000-00-00', 'fewf wfw', 6),
+(4, '2010-06-09', 'Delectus in magnam ea mollit officia mollit deserunt unde', 139);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `marco_historico_imagem`
+-- Estrutura da tabela `marco_historico_imagem`
 --
 
 CREATE TABLE `marco_historico_imagem` (
@@ -317,10 +374,37 @@ CREATE TABLE `marco_historico_imagem` (
   `imagem_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `marco_historico_imagem`
+--
+
+INSERT INTO `marco_historico_imagem` (`marco_historico_id`, `imagem_id`) VALUES
+(1, 9);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pais`
+-- Estrutura da tabela `migration`
+--
+
+CREATE TABLE `migration` (
+  `version` varchar(180) NOT NULL,
+  `apply_time` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `migration`
+--
+
+INSERT INTO `migration` (`version`, `apply_time`) VALUES
+('m000000_000000_base', 1529014974),
+('m160622_085710_create_ImageManager_table', 1529015020),
+('m170223_113221_addBlameableBehavior', 1529015020);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pais`
 --
 
 CREATE TABLE `pais` (
@@ -329,7 +413,7 @@ CREATE TABLE `pais` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pais`
+-- Extraindo dados da tabela `pais`
 --
 
 INSERT INTO `pais` (`id`, `nome`) VALUES
@@ -577,7 +661,7 @@ INSERT INTO `pais` (`id`, `nome`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `perfil`
+-- Estrutura da tabela `perfil`
 --
 
 CREATE TABLE `perfil` (
@@ -586,7 +670,7 @@ CREATE TABLE `perfil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `perfil`
+-- Extraindo dados da tabela `perfil`
 --
 
 INSERT INTO `perfil` (`id`, `descricao`) VALUES
@@ -596,7 +680,7 @@ INSERT INTO `perfil` (`id`, `descricao`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tonalidade`
+-- Estrutura da tabela `tonalidade`
 --
 
 CREATE TABLE `tonalidade` (
@@ -606,7 +690,7 @@ CREATE TABLE `tonalidade` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tonalidade`
+-- Extraindo dados da tabela `tonalidade`
 --
 
 INSERT INTO `tonalidade` (`id`, `nome`, `cor`) VALUES
@@ -617,7 +701,7 @@ INSERT INTO `tonalidade` (`id`, `nome`, `cor`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estrutura da tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -633,12 +717,12 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `sobrenome`, `email`, `senha`, `data_nascimento`, `perfil_id`, `genero`, `status`) VALUES
 (1, 'teste', 'teste', 'teste@teste.com', '698dc19d489c4e4db73e28a713eab07b', '2017-08-11', 1, 0, 1),
-(3, 'Teste', 'Testando', 'teste123@teste.com', '698dc19d489c4e4db73e28a713eab07b', NULL, 2, 1, 1),
+(3, 'Teste', 'Testando', 'teste123@teste.com', '698dc19d489c4e4db73e28a713eab07b', '2000-02-08', 2, 1, 1),
 (4, 'aaa', 'bbb', 'teste1234@teste.com', '698dc19d489c4e4db73e28a713eab07b', NULL, 2, 1, 1),
 (5, 'aaa', 'bbb', 'teste12345@teste.com', '698dc19d489c4e4db73e28a713eab07b', NULL, 2, 1, 1),
 (6, 'teste', 'sobrenome', 'teste1@teste.com', '698dc19d489c4e4db73e28a713eab07b', NULL, 2, 0, 1),
@@ -758,9 +842,9 @@ ALTER TABLE `genero`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `imagem`
+-- Indexes for table `imagemanager`
 --
-ALTER TABLE `imagem`
+ALTER TABLE `imagemanager`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -777,6 +861,12 @@ ALTER TABLE `marco_historico_imagem`
   ADD PRIMARY KEY (`marco_historico_id`,`imagem_id`),
   ADD KEY `fk_marco_historico_imagem_imagem1_idx` (`imagem_id`),
   ADD KEY `fk_marco_historico_imagem_marco_historico1_idx` (`marco_historico_id`);
+
+--
+-- Indexes for table `migration`
+--
+ALTER TABLE `migration`
+  ADD PRIMARY KEY (`version`);
 
 --
 -- Indexes for table `pais`
@@ -812,88 +902,98 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `arte_afim`
 --
 ALTER TABLE `arte_afim`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `bebida`
 --
 ALTER TABLE `bebida`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `composicao`
 --
 ALTER TABLE `composicao`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT for table `compositor`
 --
 ALTER TABLE `compositor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT for table `epoca`
 --
 ALTER TABLE `epoca`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT for table `genero`
 --
 ALTER TABLE `genero`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
--- AUTO_INCREMENT for table `imagem`
+-- AUTO_INCREMENT for table `imagemanager`
 --
-ALTER TABLE `imagem`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `imagemanager`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
 -- AUTO_INCREMENT for table `marco_historico`
 --
 ALTER TABLE `marco_historico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `pais`
 --
 ALTER TABLE `pais`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=241;
+
 --
 -- AUTO_INCREMENT for table `perfil`
 --
 ALTER TABLE `perfil`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `tonalidade`
 --
 ALTER TABLE `tonalidade`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `arte_afim_imagem`
+-- Limitadores para a tabela `arte_afim_imagem`
 --
 ALTER TABLE `arte_afim_imagem`
-  ADD CONSTRAINT `fk_arte_imagem_arte1` FOREIGN KEY (`arte_id`) REFERENCES `arte_afim` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_arte_imagem_imagem1` FOREIGN KEY (`imagem_id`) REFERENCES `imagem` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_arte_imagem_arte1` FOREIGN KEY (`arte_id`) REFERENCES `arte_afim` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `bebida`
+-- Limitadores para a tabela `bebida`
 --
 ALTER TABLE `bebida`
   ADD CONSTRAINT `fk_bebida_pais1` FOREIGN KEY (`pais_id`) REFERENCES `pais` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `bebida_imagem`
+-- Limitadores para a tabela `bebida_imagem`
 --
 ALTER TABLE `bebida_imagem`
-  ADD CONSTRAINT `fk_bebida_imagem_bebida1` FOREIGN KEY (`bebida_id`) REFERENCES `bebida` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_bebida_imagem_imagem1` FOREIGN KEY (`imagem_id`) REFERENCES `imagem` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_bebida_imagem_bebida1` FOREIGN KEY (`bebida_id`) REFERENCES `bebida` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `composicao`
+-- Limitadores para a tabela `composicao`
 --
 ALTER TABLE `composicao`
   ADD CONSTRAINT `composicao_ibfk_1` FOREIGN KEY (`compositor_id`) REFERENCES `compositor` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -902,21 +1002,20 @@ ALTER TABLE `composicao`
   ADD CONSTRAINT `fk_composicao_tonalidade1` FOREIGN KEY (`tonalidade_id`) REFERENCES `tonalidade` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `composicao_imagem`
+-- Limitadores para a tabela `composicao_imagem`
 --
 ALTER TABLE `composicao_imagem`
-  ADD CONSTRAINT `fk_obra_imagem_imagem1` FOREIGN KEY (`imagem_id`) REFERENCES `imagem` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_obra_imagem_obra1` FOREIGN KEY (`obra_id`) REFERENCES `composicao` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `composicao_usuario`
+-- Limitadores para a tabela `composicao_usuario`
 --
 ALTER TABLE `composicao_usuario`
   ADD CONSTRAINT `fk_composicao_usuario_composicao1` FOREIGN KEY (`composicao_id`) REFERENCES `composicao` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_composicao_usuario_usuario1` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `compositor`
+-- Limitadores para a tabela `compositor`
 --
 ALTER TABLE `compositor`
   ADD CONSTRAINT `fk_compositor_epoca1` FOREIGN KEY (`epoca_id`) REFERENCES `epoca` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -924,48 +1023,45 @@ ALTER TABLE `compositor`
   ADD CONSTRAINT `fk_compositor_pais2` FOREIGN KEY (`pais_falecimento_id`) REFERENCES `pais` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `compositor_imagem`
+-- Limitadores para a tabela `compositor_imagem`
 --
 ALTER TABLE `compositor_imagem`
-  ADD CONSTRAINT `fk_compositor_imagem_compositor1` FOREIGN KEY (`compositor_id`) REFERENCES `compositor` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_compositor_imagem_imagem1` FOREIGN KEY (`imagem_id`) REFERENCES `imagem` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_compositor_imagem_compositor1` FOREIGN KEY (`compositor_id`) REFERENCES `compositor` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `compositor_usuario`
+-- Limitadores para a tabela `compositor_usuario`
 --
 ALTER TABLE `compositor_usuario`
   ADD CONSTRAINT `fk_compositor_usuario_compositor1` FOREIGN KEY (`compositor_id`) REFERENCES `compositor` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_compositor_usuario_usuario1` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `epoca_imagem`
+-- Limitadores para a tabela `epoca_imagem`
 --
 ALTER TABLE `epoca_imagem`
-  ADD CONSTRAINT `fk_epoca_imagem_epoca1` FOREIGN KEY (`epoca_id`) REFERENCES `epoca` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_epoca_imagem_imagem1` FOREIGN KEY (`imagem_id`) REFERENCES `imagem` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_epoca_imagem_epoca1` FOREIGN KEY (`epoca_id`) REFERENCES `epoca` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `epoca_usuario`
+-- Limitadores para a tabela `epoca_usuario`
 --
 ALTER TABLE `epoca_usuario`
   ADD CONSTRAINT `fk_epoca_usuario_epoca1` FOREIGN KEY (`epoca_id`) REFERENCES `epoca` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_epoca_usuario_usuario1` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `marco_historico`
+-- Limitadores para a tabela `marco_historico`
 --
 ALTER TABLE `marco_historico`
   ADD CONSTRAINT `fk_marco_historico_pais1` FOREIGN KEY (`pais_id`) REFERENCES `pais` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `marco_historico_imagem`
+-- Limitadores para a tabela `marco_historico_imagem`
 --
 ALTER TABLE `marco_historico_imagem`
-  ADD CONSTRAINT `fk_marco_historico_imagem_imagem1` FOREIGN KEY (`imagem_id`) REFERENCES `imagem` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_marco_historico_imagem_marco_historico1` FOREIGN KEY (`marco_historico_id`) REFERENCES `marco_historico` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `usuario`
+-- Limitadores para a tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD CONSTRAINT `fk_usuario_perfil` FOREIGN KEY (`perfil_id`) REFERENCES `perfil` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;

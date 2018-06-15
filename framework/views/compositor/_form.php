@@ -57,17 +57,10 @@ use app\models\Epoca;
             'prompt' => ''
     ]) ?>
 
-    <?php if (!$model->isNewRecord): ?>
-        <div>
-            <label>Imagem atual</label>
-            <figure>
-                <?= Html::img(Url::toRoute($model->imagem_principal)) ?>
-            </figure>
-        </div>
-    <?php endif; ?>
-
-     <?= $form->field($model, 'imagem_principal')->widget(FileInput::classname(), [
-        'options' => ['accept' => 'image/*'],
+    <?= $form->field($model, 'imagem_principal')->widget(\noam148\imagemanager\components\ImageManagerInputWidget::className(), [
+            'cropViewMode' => 1, //crop mode, option info: https://github.com/fengyuanchen/cropper/#viewmode
+            'showPreview' => true, //false to hide the preview
+            'showDeletePickedImageConfirm' => false, //on true show warning before detach image
     ]); ?>
 
     <div class="form-group">

@@ -62,12 +62,13 @@ class ArteAfimImagemController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($arte_afim_id)
     {
         $model = new ArteAfimImagem();
+        $model->arte_id = $arte_afim_id;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'arte_id' => $model->arte_id, 'imagem_id' => $model->imagem_id]);
+            return $this->redirect(['arte-afim/index']);
         } else {
             return $this->render('create', [
                 'model' => $model,

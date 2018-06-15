@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 
@@ -37,6 +38,13 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'pais.nome',
                 'label' => 'País'
+            ],
+            [
+                'label' => 'Adicionar imagens',
+                'format' => 'html',
+                'value' => function($data) {
+                    return Html::a('Adicionar', Url::toRoute(['bebida-imagem/create', 'bebida_id' => $data->id]), ['class' => 'btn btn-xs btn-success']);
+                }
             ],
 
             ['class' => 'yii\grid\ActionColumn'],

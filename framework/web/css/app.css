@@ -3937,3 +3937,7 @@ fieldset[disabled] .i-checks input + i:before {
   height: 100%;
   text-indent: -9999px;
 }
+
+#module-imagemanager {
+  margin-top: 24px;
+}

@@ -7,16 +7,15 @@ use Yii;
 /**
  * This is the model class for table "arte_afim_imagem".
  *
- * @property integer $arte_id
- * @property integer $imagem_id
+ * @property int $arte_id
+ * @property int $imagem_id
  *
  * @property ArteAfim $arte
- * @property Imagem $imagem
  */
 class ArteAfimImagem extends \yii\db\ActiveRecord
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public static function tableName()
     {
@@ -24,26 +23,26 @@ class ArteAfimImagem extends \yii\db\ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
         return [
             [['arte_id', 'imagem_id'], 'required'],
             [['arte_id', 'imagem_id'], 'integer'],
+            [['arte_id', 'imagem_id'], 'unique', 'targetAttribute' => ['arte_id', 'imagem_id']],
             [['arte_id'], 'exist', 'skipOnError' => true, 'targetClass' => ArteAfim::className(), 'targetAttribute' => ['arte_id' => 'id']],
-            [['imagem_id'], 'exist', 'skipOnError' => true, 'targetClass' => Imagem::className(), 'targetAttribute' => ['imagem_id' => 'id']],
         ];
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function attributeLabels()
     {
         return [
-            'arte_id' => 'Arte ID',
-            'imagem_id' => 'Imagem ID',
+            'arte_id' => 'Arte',
+            'imagem_id' => 'Imagem',
         ];
     }
 
@@ -53,13 +52,5 @@ class ArteAfimImagem extends \yii\db\ActiveRecord
     public function getArte()
     {
         return $this->hasOne(ArteAfim::className(), ['id' => 'arte_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getImagem()
-    {
-        return $this->hasOne(Imagem::className(), ['id' => 'imagem_id']);
     }
 }

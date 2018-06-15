@@ -32,7 +32,13 @@ $config = [
             
             // automatically use kartik\widgets for each of the above formats
             'autoWidget' => true,
-        ]
+        ],
+        'imagemanager' => [
+            'class' => 'noam148\imagemanager\Module',
+            'canUploadImage' => true,
+            'canRemoveImage' => true,
+            'deleteOriginalAfterEdit' => false // false: keep original image after edit. true: delete original image after edit
+        ],
     ],
     'language' => 'pt-BR',
     'sourceLanguage' => 'pt-BR',
@@ -40,6 +46,18 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'c7ToxFxX21iDoVhVB1pKcfTIybWze35l',
+        ],
+        'imagemanager' => [
+            'class' => 'noam148\imagemanager\components\ImageManagerGetPath',
+            //set media path (outside the web folder is possible)
+            'mediaPath' => '/uploads',
+            //path relative web folder. In case of multiple environments (frontend, backend) add more paths 
+            'cachePath' =>  ['assets/images'],
+            //use filename (seo friendly) for resized images else use a hash
+            'useFilename' => true,
+            //show full url (for example in case of a API)
+            'absoluteUrl' => false,
+            'databaseComponent' => 'db'
         ],
         'formatter' => [
             'class' => 'yii\i18n\Formatter',

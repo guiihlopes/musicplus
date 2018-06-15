@@ -69,8 +69,8 @@ class Composicao extends \yii\db\ActiveRecord
             'pais_id' => 'Pais',
             'genero_id' => 'Genero',
             'tonalidade_id' => 'Tonalidade',
-            'partitura_url' => 'Partitura Url',
-            'composicao_url' => 'Composicao Url',
+            'partitura_url' => 'Imagem principal',
+            'composicao_url' => 'Composição',
             'compositor_id' => 'Compositor',
         ];
     }

@@ -6,13 +6,13 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\CompositorImagem */
 
-$this->title = 'Create Compositor Imagem';
-$this->params['breadcrumbs'][] = ['label' => 'Compositor Imagems', 'url' => ['index']];
+$this->title = 'Cadastrar imagem de: ';
+$this->params['breadcrumbs'][] = ['label' => 'Imagens Compositor', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="compositor-imagem-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode($this->title) . $model->compositor->nome_completo ?></h1>
 
     <?= $this->render('_form', [
         'model' => $model,

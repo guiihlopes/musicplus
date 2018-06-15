@@ -12,12 +12,16 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'obra_id')->textInput() ?>
+    <?= $form->field($model, 'obra_id')->textInput(['disabled' => 'disabled']) ?>
 
-    <?= $form->field($model, 'imagem_id')->textInput() ?>
+    <?= $form->field($model, 'imagem_id')->widget(\noam148\imagemanager\components\ImageManagerInputWidget::className(), [
+            'cropViewMode' => 1, //crop mode, option info: https://github.com/fengyuanchen/cropper/#viewmode
+            'showPreview' => true, //false to hide the preview
+            'showDeletePickedImageConfirm' => false, //on true show warning before detach image
+    ]); ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Cadastrar' : 'Atualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 
@@ -29,10 +30,26 @@ $this->params['breadcrumbs'][] = $this->title;
             'titulo_completo',
             'texto_informativo:ntext',
             'data_composicao',
-            'pais.nome',
+            [
+                'attribute' => 'pais.nome',
+                'label' => 'País'
+            ],
             // 'genero_id',
             // 'tonalidade_id',
-            // 'partitura_url:url',
+            [
+                'attribute' => 'partitura_url',
+                'format' => 'image',
+                'value' => function($data) {
+                    return Yii::$app->imagemanager->getImagePath($data->partitura_url);
+                }
+            ],
+            [
+                'label' => 'Adicionar imagens',
+                'format' => 'html',
+                'value' => function($data) {
+                    return Html::a('Adicionar', Url::toRoute(['composicao-imagem/create', 'composicao_id' => $data->id]), ['class' => 'btn btn-xs btn-success']);
+                }
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

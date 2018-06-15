@@ -44,7 +44,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Imagem do compositor',
                 'format' => 'html',
                 'value' => function ($data) {
-                    return '<img class="thumb-lg" src="'. Url::toRoute($data['imagem_principal']) .'" />';
+                    return '<img class="thumb-lg" src="'. Yii::$app->imagemanager->getImagePath($data->imagem_principal) .'" />';
+                }
+            ],
+            [
+                'label' => 'Adicionar imagens',
+                'format' => 'html',
+                'value' => function($data) {
+                    return Html::a('Adicionar', Url::toRoute(['compositor-imagem/create', 'compositor_id' => $data->id]), ['class' => 'btn btn-xs btn-success']);
                 }
             ],
 

@@ -62,12 +62,13 @@ class ComposicaoImagemController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($composicao_id)
     {
         $model = new ComposicaoImagem();
+        $model->obra_id = $composicao_id;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'obra_id' => $model->obra_id, 'imagem_id' => $model->imagem_id]);
+            return $this->redirect(['composicao/index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
