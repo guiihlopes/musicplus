@@ -14,26 +14,24 @@ $(document).ready(function () {
       audioFullScreen: false
     });
 
-  const itemOverlay = $('.composicao-item .item-overlay');
-  const itemPlayButton = itemOverlay.find('.center a');
+  const item = $('.composicao-item');
+  const itemPlayButton = item.find('a');
 
   const removeAllActives = () => {
-    itemPlayButton.removeClass('active');
-    itemOverlay.removeClass('active');
+    itemPlayButton.removeClass('btn-info');
   };
 
   itemPlayButton.click(function (ev) {
     ev.preventDefault();
-    const isActiveButton = this.classList.contains('active');
+    const isActiveButton = this.classList.contains('btn-success');
     const parentItem = $(this).parent().parent().parent().parent();
-    const overlay = parentItem.find('.item-overlay');
-    const isActiveOverlay = overlay.hasClass('active');
     const href = $(this).attr('href');
-    const musicInfo = parentItem.find('.padder-v');
-    const musicColor = musicInfo.data('color');
-    const musicTitle = musicInfo.find('a:first-child').text();
-    const artistName = musicInfo.find('a:last-child').text();
+    const musicColor = $(this).data('color');
+    const musicId = $(this).data('id');
+    const musicTitle = $('.composicao-title').text();
+    const artistName = $('.composicao-autor').text();
     const music = {
+      id: musicId,
       title: musicTitle,
       artist: artistName,
       mp3: href,
@@ -42,16 +40,29 @@ $(document).ready(function () {
     $(".vbox > footer").css('background', musicColor);
 
     removeAllActives();
-    if (!isActiveOverlay) {
-      overlay.addClass('active');
-    }
     if (!isActiveButton) {
-      this.classList.add('active');
-      myPlaylist.add(music);
-      const lastItem = myPlaylist.playlist.length;
-      myPlaylist.play(lastItem - 1);
+      this.classList.add('btn-success');
+      var musicIndex = null;
+      myPlaylist.playlist.map((obj, index) => {
+        if (obj.id == musicId) {
+          musicIndex = index;
+        }
+      });
+      if (musicIndex !== null) {
+        if (musicIndex == myPlaylist.current) {
+          myPlaylist.play();
+        } else {
+          myPlaylist.play(musicIndex);
+        }
+      } else {
+        myPlaylist.add(music);
+        const lastItem = myPlaylist.playlist.length;
+        myPlaylist.play(lastItem - 1);
+      }
     } else {
       myPlaylist.pause();
+      $(".vbox > footer").css('background', '#5a6a7a');
+      itemPlayButton.removeClass('btn-success').addClass('btn-info');
     }
   });
 

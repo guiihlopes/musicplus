@@ -120,6 +120,17 @@ class CompositorController extends BaseController
         return $this->redirect(['index']);
     }
 
+    public function actionFavoritos() {
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => Yii::$app->user->identity->getCompositors()
+        ]);
+
+        return $this->render('/site/index', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
     public function actionFavorito($id)
     {
         Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;

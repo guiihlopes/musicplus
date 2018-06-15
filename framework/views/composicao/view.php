@@ -20,20 +20,35 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="panel wrapper-lg">
                         <div class="row">
                             <div class="col-sm-5">
-                                <img src="<?= ($model->partitura_url !== null) ? Url::toRoute($model->partitura_url) : Url::toRoute('images/p2.jpg') ;?>" class="img-full m-b">
+                                <img src="<?= ($model->partitura_url !== null && is_int($model->partitura_url)) ? Url::toRoute(Yii::$app->imagemanager->getImagePath($model->partitura_url)) : Url::toRoute('images/p2.jpg') ;?>" class="img-full m-b">
                             </div>
                             <div class="col-sm-7">
-                                <h2 class="m-t-none text-black" title="<?= $model->titulo_completo ?>"><?= substr($model->titulo_completo,0,65)."..." ?></h2>
+                                <h2 class="m-t-none text-black composicao-title" title="<?= $model->titulo_completo ?>"><?= substr($model->titulo_completo,0,65) . (strlen($model->titulo_completo) > 65 ? "..." : '') ?></h2>
                                 <div class="clearfix m-b-lg">
                                     <a href="#" class="thumb-sm pull-left m-r">
-                                        <img src="<?= $model->compositor->imagem_principal !== null ? Url::toRoute($model->compositor->imagem_principal) : Url::toRoute('images/a0.png') ?>" class="img-circle">
+                                        <img src="<?= $model->compositor->imagem_principal !== null && is_int($model->compositor->imagem_principal) ? Url::toRoute(Yii::$app->imagemanager->getImagePath($model->compositor->imagem_principal)) : Url::toRoute('images/a0.png') ?>" class="img-circle">
                                     </a>
                                     <div class="clear">
-                                        <a href="<?= Url::toRoute(['compositor/informacoes', 'id' => $model->compositor->id]) ?>" class="text-info"><?= $model->compositor->nome_completo ?></a>
+                                        <a 
+                                            href="<?= Url::toRoute([
+                                                    'compositor/informacoes', 
+                                                    'id' => $model->compositor->id
+                                                ]) ?>"
+                                            class="text-info composicao-autor"
+                                        >
+                                                <?= $model->compositor->nome_completo ?>
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="m-b-lg">
-                                    <a href="<?= $model->composicao_url ?>" class="btn btn-info">Tocar</a>
+                                <div class="m-b-lg composicao-item">
+                                    <a
+                                        href="<?= $model->composicao_url ?>"
+                                        class="btn btn-info"
+                                        data-color="<?= $model->tonalidade->cor  ?>"
+                                        data-id="<?= $model->id  ?>"
+                                    >
+                                        Tocar
+                                    </a>
                                 </div>
                                 <div>
                                     Gênero: <a href="<?= Url::toRoute(['genero/view', 'id' => $model->genero->id]) ?>" class="badge bg-light"><?= $model->genero->descricao ?></a>
