@@ -50,9 +50,9 @@ $config = [
         'imagemanager' => [
             'class' => 'noam148\imagemanager\components\ImageManagerGetPath',
             //set media path (outside the web folder is possible)
-            'mediaPath' => '/uploads',
+            'mediaPath' => dirname(__DIR__) . '/web/uploads',
             //path relative web folder. In case of multiple environments (frontend, backend) add more paths 
-            'cachePath' =>  ['assets/images'],
+            // 'cachePath' =>  ['assets/images'],
             //use filename (seo friendly) for resized images else use a hash
             'useFilename' => true,
             //show full url (for example in case of a API)
