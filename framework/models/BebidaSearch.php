@@ -12,6 +12,8 @@ use app\models\Bebida;
  */
 class BebidaSearch extends Bebida
 {
+
+    public $pais;
     /**
      * @inheritdoc
      */
@@ -19,7 +21,7 @@ class BebidaSearch extends Bebida
     {
         return [
             [['id', 'pais_id'], 'integer'],
-            [['nome', 'data', 'amadurecimento', 'descricao', 'safra', 'tipo', 'uva'], 'safe'],
+            [['nome', 'data', 'amadurecimento', 'pais', 'descricao', 'safra', 'tipo', 'uva'], 'safe'],
             [['teor_alcoolico'], 'number'],
         ];
     }
@@ -44,11 +46,18 @@ class BebidaSearch extends Bebida
     {
         $query = Bebida::find();
 
+        $query->joinWith(['pais']);
+
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
+
+        $dataProvider->sort->attributes['pais'] = [
+            'asc' => ['pais.nome' => SORT_ASC],
+            'desc' => ['pais.nome' => SORT_DESC],
+        ];
 
         $this->load($params);
 
@@ -71,7 +80,8 @@ class BebidaSearch extends Bebida
             ->andFilterWhere(['like', 'descricao', $this->descricao])
             ->andFilterWhere(['like', 'safra', $this->safra])
             ->andFilterWhere(['like', 'tipo', $this->tipo])
-            ->andFilterWhere(['like', 'uva', $this->uva]);
+            ->andFilterWhere(['like', 'uva', $this->uva])
+            ->andFilterWhere(['like', 'pais.nome', $this->pais]);
 
         return $dataProvider;
     }

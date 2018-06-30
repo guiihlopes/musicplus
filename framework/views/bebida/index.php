@@ -36,7 +36,8 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'tipo',
             // 'uva',
             [
-                'attribute' => 'pais.nome',
+                'attribute' => 'pais',
+                'value' => 'pais.nome',
                 'label' => 'País'
             ],
             [
