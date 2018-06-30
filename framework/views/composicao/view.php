@@ -20,13 +20,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="panel wrapper-lg">
                         <div class="row">
                             <div class="col-sm-5">
-                                <img src="<?= ($model->partitura_url !== null && is_int($model->partitura_url)) ? Url::toRoute(Yii::$app->imagemanager->getImagePath($model->partitura_url)) : Url::toRoute('images/p2.jpg') ;?>" class="img-full m-b">
+                                <img src="<?= ($model->partitura_url !== null) ? Url::toRoute(Yii::$app->imagemanager->getImagePath($model->partitura_url)) : Url::toRoute('images/p2.jpg') ;?>" class="img-full m-b">
                             </div>
                             <div class="col-sm-7">
                                 <h2 class="m-t-none text-black composicao-title" title="<?= $model->titulo_completo ?>"><?= substr($model->titulo_completo,0,65) . (strlen($model->titulo_completo) > 65 ? "..." : '') ?></h2>
                                 <div class="clearfix m-b-lg">
                                     <a href="#" class="thumb-sm pull-left m-r">
-                                        <img src="<?= $model->compositor->imagem_principal !== null && is_int($model->compositor->imagem_principal) ? Url::toRoute(Yii::$app->imagemanager->getImagePath($model->compositor->imagem_principal)) : Url::toRoute('images/a0.png') ?>" class="img-circle">
+                                        <img src="<?= $model->compositor->imagem_principal !== null ? Url::toRoute(Yii::$app->imagemanager->getImagePath($model->compositor->imagem_principal)) : Url::toRoute('images/a0.png') ?>" class="img-circle">
                                     </a>
                                     <div class="clear">
                                         <a 

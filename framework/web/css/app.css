@@ -3396,7 +3396,7 @@ a.bg-light:focus {
 .thumb-lg img,
 .thumb-btn img {
   height: 100%;
-  max-width: 100%;
+  width: 100%;
   object-fit: cover;
   vertical-align: middle;
 }
@@ -3951,4 +3951,8 @@ fieldset[disabled] .i-checks input + i:before {
 
 #module-imagemanager {
   margin-top: 24px;
+}
+
+.scrollable .container {
+  max-width: 100%;
 }
