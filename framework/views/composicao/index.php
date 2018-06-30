@@ -31,7 +31,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'texto_informativo:ntext',
             'data_composicao',
             [
-                'attribute' => 'pais.nome',
+                'attribute' => 'pais',
+                'value' => 'pais.nome',
                 'label' => 'País'
             ],
             // 'genero_id',

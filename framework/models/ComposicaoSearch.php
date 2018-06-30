@@ -12,6 +12,8 @@ use app\models\Composicao;
  */
 class ComposicaoSearch extends Composicao
 {
+
+    public $pais;
     /**
      * @inheritdoc
      */
@@ -19,7 +21,7 @@ class ComposicaoSearch extends Composicao
     {
         return [
             [['id', 'pais_id', 'genero_id', 'tonalidade_id'], 'integer'],
-            [['titulo_completo', 'texto_informativo', 'data_composicao', 'partitura_url'], 'safe'],
+            [['titulo_completo', 'pais', 'texto_informativo', 'data_composicao', 'partitura_url'], 'safe'],
         ];
     }
 
@@ -42,12 +44,19 @@ class ComposicaoSearch extends Composicao
     public function search($params)
     {
         $query = Composicao::find();
+        
+        $query->joinWith(['pais']);
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
+
+        $dataProvider->sort->attributes['pais'] = [
+            'asc' => ['pais.nome' => SORT_ASC],
+            'desc' => ['pais.nome' => SORT_DESC],
+        ];
 
         $this->load($params);
 
@@ -68,7 +77,8 @@ class ComposicaoSearch extends Composicao
 
         $query->andFilterWhere(['like', 'titulo_completo', $this->titulo_completo])
             ->andFilterWhere(['like', 'texto_informativo', $this->texto_informativo])
-            ->andFilterWhere(['like', 'partitura_url', $this->partitura_url]);
+            ->andFilterWhere(['like', 'partitura_url', $this->partitura_url])
+            ->andFilterWhere(['like', 'pais.nome', $this->pais]);
 
         return $dataProvider;
     }
