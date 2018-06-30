@@ -131,22 +131,6 @@ $userMenu = function ($className = null, $arrowClass = null) {
                               <span class="font-bold">Meus favoritos</span>',
                             'url' => ['/compositor/favoritos']
                           ],
-                          [
-                            'label' => '<i class="icon-list icon  text-info-dker"></i>
-                              <span class="font-bold">Composições favoritas</span>',
-                            'url' => ['/composicao/favorita']
-                          ],
-                          [
-                            'label' => '<i class="icon-music-tone-alt icon text-info"></i>
-                              <span class="font-bold">Gêneros</span>',
-                            'url' => ['/composicao/favorita']
-                          ],
-                          [
-                            'label' => '<i class="icon-drawer icon text-primary-lter"></i>
-                              <b class="badge bg-primary pull-right">6</b>
-                              <span class="font-bold">Épocas favoritas</span>',
-                            'url' => ['/epocas/favorita']
-                          ],
                           '<li class="m-b hidden-nav-xs"></li>'
                         ],
                     ]);

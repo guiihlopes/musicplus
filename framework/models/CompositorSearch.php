@@ -12,14 +12,17 @@ use app\models\Compositor;
  */
 class CompositorSearch extends Compositor
 {
+
+    public $paisNascimento;
+    public $epoca;
     /**
      * @inheritdoc
-     */
+    */
     public function rules()
     {
         return [
             [['id', 'epoca_id', 'pais_nascimento_id', 'pais_falecimento_id'], 'integer'],
-            [['nome_completo', 'data_nascimento', 'bio', 'data_falecimento', 'imagem_principal'], 'safe'],
+            [['nome_completo', 'epoca', 'paisNascimento', 'data_nascimento', 'bio', 'data_falecimento', 'imagem_principal'], 'safe'],
         ];
     }
 
@@ -42,12 +45,24 @@ class CompositorSearch extends Compositor
     public function search($params)
     {
         $query = Compositor::find();
+        
+        $query->joinWith(['paisNascimento', 'epoca']);
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
+
+        $dataProvider->sort->attributes['paisNascimento'] = [
+            'asc' => ['pais.nome' => SORT_ASC],
+            'desc' => ['pais.nome' => SORT_DESC],
+        ];
+
+        $dataProvider->sort->attributes['epoca'] = [
+            'asc' => ['epoca.descricao' => SORT_ASC],
+            'desc' => ['epoca.descricao' => SORT_DESC],
+        ];
 
         $this->load($params);
 
@@ -69,7 +84,9 @@ class CompositorSearch extends Compositor
 
         $query->andFilterWhere(['like', 'nome_completo', $this->nome_completo])
             ->andFilterWhere(['like', 'bio', $this->bio])
-            ->andFilterWhere(['like', 'imagem_principal', $this->imagem_principal]);
+            ->andFilterWhere(['like', 'imagem_principal', $this->imagem_principal])
+            ->andFilterWhere(['like', 'epoca.descricao', $this->epoca])
+            ->andFilterWhere(['like', 'pais.nome', $this->paisNascimento]);
 
         return $dataProvider;
     }

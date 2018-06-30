@@ -12,8 +12,7 @@ CSS;
 $this->registerCss($style);
 ?>
 <section class="scrollable padder-lg w-f-md" id="bjax-target">
-    <a href="#" class="pull-right text-muted m-t-lg" data-toggle="class:fa-spin"><i class="icon-refresh i-lg  inline" id="refresh"></i></a>
-    <h2 class="font-thin m-b">Discover <span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
+    <h2 class="font-thin m-b">Compositores <span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
     <span class="bar1 a1 bg-primary lter"></span>
         <span class="bar2 a2 bg-info lt"></span>
         <span class="bar3 a3 bg-success"></span>

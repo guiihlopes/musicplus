@@ -31,10 +31,12 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'data_nascimento',
             'bio:ntext',
             [
+                'attribute' => 'epoca',
                 'label' => 'Época',
                 'value' => 'epoca.descricao'
             ],
             [
+                'attribute' => 'paisNascimento',
                 'label' => 'País de nascimento',
                 'value' => 'paisNascimento.nome'
             ],
