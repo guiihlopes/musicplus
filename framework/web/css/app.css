@@ -648,7 +648,7 @@ body.container {
     display: table-cell !important;
   }
   .vbox {
-    display: table;
+    display: block;
     border-spacing: 0;
     position: relative;
     height: 100%;
