@@ -3956,3 +3956,7 @@ fieldset[disabled] .i-checks input + i:before {
 .scrollable .container {
   max-width: 100%;
 }
+
+.usuario-update {
+  padding: 0 16px;
+}

@@ -127,9 +127,14 @@ $userMenu = function ($className = null, $arrowClass = null) {
                               Discover
                           </li>',
                           [
-                            'label' => '<i class="icon-disc icon text-success"></i>
+                            'label' => '<i class="icon-list icon  text-info-dker"></i>
                               <span class="font-bold">Meus favoritos</span>',
                             'url' => ['/compositor/favoritos']
+                          ],
+                          [
+                            'label' => '<i class="icon-music-tone-alt icon text-info"></i>
+                              <span class="font-bold">Minhas composição</span>',
+                            'url' => ['/composicao/favoritos']
                           ],
                           '<li class="m-b hidden-nav-xs"></li>'
                         ],

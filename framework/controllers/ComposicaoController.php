@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Composicao;
 use app\models\ComposicaoSearch;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -70,6 +71,38 @@ class ComposicaoController extends BaseController
             'model' => $this->findModel($id),
         ]);
     }
+
+    public function actionFavoritos() {
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => Yii::$app->user->identity->getComposicaos()
+        ]);
+
+        return $this->render('/composicao/favoritos', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    public function actionFavorito($id)
+    {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+        $usuario_id = Yii::$app->user->identity->id;
+
+        $model = new \app\models\ComposicaoUsuario();
+
+        $model->usuario_id = $usuario_id;
+        $model->composicao_id = $id;
+        try {
+            $model->save();
+            return true;
+        } catch (\yii\base\Exception $exception) {
+            $model = $model->find()->where(['usuario_id' => $usuario_id])->andWhere(['composicao_id' => $id])->one();
+            $model->delete();
+            return "deleted";
+        }
+    }
+
     public function actionInformacoes($id)
     {
         return $this->render('view', [

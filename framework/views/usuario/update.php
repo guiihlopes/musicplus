@@ -9,6 +9,12 @@ $this->title = 'Atualizar Usuário: ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Usuarios', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Atualizar';
+$style= <<< CSS
+    .vbox footer {
+        display: none;
+    }
+CSS;
+$this->registerCss($style);
 ?>
 <div class="usuario-update">
 

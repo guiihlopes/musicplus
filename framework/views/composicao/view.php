@@ -10,6 +10,29 @@ use yii\helpers\Url;
 $this->title = $model->titulo_completo;
 $this->params['breadcrumbs'][] = ['label' => 'Composições', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+$favorite_user_url = Url::toRoute(['/composicao/favorito', 'id' => $model->id]);
+$script = <<< JS
+    $('.favoriteComposicaoLink').click(function (ev) {
+        ev.preventDefault();
+        var link = $(this);
+        $.ajax({
+            url: $(this).attr('href'),
+            success: function(data) {
+                var icon = link.find("i");
+                if (data === true) {
+                    icon.attr('class', 'fa fa-heart');
+                }else if (data == "deleted") {
+                    icon.attr('class', 'fa fa-heart-o');
+                }
+                return true;
+            }
+        });
+    });
+JS;
+    $position = \yii\web\View::POS_READY;
+    $this->registerJs($script, $position);
+
 ?>
 
 <section id="content">
@@ -48,6 +71,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                         data-id="<?= $model->id  ?>"
                                     >
                                         Tocar
+                                    </a>
+                                    <a href="<?= $favorite_user_url ?>" class="pull-right favoriteComposicaoLink">
+                                        <i class="fa fa-heart<?= count($model->getUsuarios()->where(['id' => Yii::$app->user->identity->id])->all()) ? "" : "-o" ?>"></i>
                                     </a>
                                 </div>
                                 <div>

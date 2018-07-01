@@ -15,7 +15,7 @@ $(document).ready(function () {
     });
 
   const item = $('.composicao-item');
-  const itemPlayButton = item.find('a');
+  const itemPlayButton = item.find('a:first-child');
 
   const removeAllActives = () => {
     itemPlayButton.removeClass('btn-info');
