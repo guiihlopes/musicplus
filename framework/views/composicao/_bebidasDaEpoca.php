@@ -5,7 +5,7 @@
     $date = date_create_from_format('Y-m-d', $data);
     $dataProvider = new ActiveDataProvider([
         'query' => Bebida::find()
-            ->where(['DATE_FORMAT(data, "%m-%Y")' => $date->format('m-Y') ])
+            ->where(['DATE_FORMAT(data, "%Y")' => $date->format('Y') ])
             ->orWhere(['pais_id' => $pais_id])
     ]);
 ?>

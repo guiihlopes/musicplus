@@ -13,6 +13,8 @@
     </a>
     <div class="media-body">                        
         <a href="#" class="font-semibold"><?= $model->descricao ?></a>
-        <div class="text-xs block m-t-xs"><a href="#"><?= $model->pais->nome ?></a> <?= $model->data ?></div>
+        <div class="text-xs block m-t-xs">
+            <a href="#"><?= $model->pais->nome ?></a> <?= $model->data ?>
+        </div>
     </div>
 </article>

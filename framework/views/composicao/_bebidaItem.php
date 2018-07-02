@@ -15,6 +15,12 @@
         <a href="#" class="font-semibold"><?= $model->nome ?></a>
         <div class="text-xs block m-t-xs">
             <a href="#"><?= $model->pais->nome ?></a> <?= $model->data ?>
+            <p><?= $model->descricao ?></p>
+            <div>
+                <p class="badge bg-light">Teor Alcoolico: <?= $model->teor_alcoolico ?></p>
+                <p class="badge bg-gradient">Safra: <?= $model->safra ?></p>
+                <p class="badge bg-light">Amadurecimento: <?= $model->amadurecimento ?></p>
+            </div>
         </div>
     </div>
 </article>
